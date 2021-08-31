@@ -10,13 +10,12 @@ void showColumn(string field)
 	cout << "|";
 }
 
-void showColumnWithColor(string field)
+void	showFieldsColumns()
 {
-	if (field.length() > 24)
-		cout << field.substr(0, 23) << ".";
-	else
-		cout << std::setw(24) << field;
-	cout << "|";
+	cout << std::setw(24) << "\033[1;35mindex\e[0;37m"  << "|";
+	cout << std::setw(24) << "\033[1;35mfirst name\e[0;37m" << "|";
+	cout << std::setw(24) << "\033[1;35mlast name\e[0;37m"  << "|";
+	cout << std::setw(24) << "\033[1;35mnickname\e[0;37m"  << "|";
 }
 
 int CheckIndex(string value)

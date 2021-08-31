@@ -11,7 +11,7 @@
 #define endl std::endl
 #define cout std::cout
 #define cin std::cin
-#define ContactNb 2
+#define ContactNb 8
 #define fieldNb 5
 
 class Contact

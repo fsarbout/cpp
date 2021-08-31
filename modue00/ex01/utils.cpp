@@ -22,8 +22,7 @@ int CheckIndex(string value)
 {
 	int index = 0;
 
-	for (int i = 0; i < (int)value.length(); i++)
-		if (!isdigit(value[i]))
+	if (notNumber(value))
 			return (-1);
 	std::stringstream(value) >> index;
 	if (index >= 8 || index < 0)
@@ -36,4 +35,12 @@ string ToString(int val)
 	std::stringstream stream;
 	stream << val;
 	return stream.str();
+}
+
+int	notNumber(string value)
+{
+	for (int i = 0; i < (int)value.length(); i++)
+		if (!isdigit(value[i]))
+			return (1);
+	return (0);
 }

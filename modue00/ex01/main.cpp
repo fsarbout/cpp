@@ -12,11 +12,11 @@ int main()
 
 		std::getline(cin, command);
 
-		if (command == "exit")
+		if (command == "EXIT")
 			break;
-		else if (command == "add")
+		else if (command == "ADD")
 			phonebookObj.addContact();
-		else if (command == "search")
+		else if (command == "SEARCH")
 			phonebookObj.Search();
 	}
 }

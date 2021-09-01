@@ -2,7 +2,7 @@ NAME = phonebook
 
 CC = clang++ -std=c++98
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 SRC = *.cpp
 	

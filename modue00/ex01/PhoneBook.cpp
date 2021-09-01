@@ -1,6 +1,14 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
+PhoneBook::PhoneBook()
+{
+	index = 0;
+	oldest = 0;
+}
+
+PhoneBook::~PhoneBook() {}
+
 Contact PhoneBook::getContacts(int i)
 {
 	return contacts[i];
@@ -9,12 +17,10 @@ Contact PhoneBook::getContacts(int i)
 void PhoneBook::addContact()
 {
 	string value;
-	int counter= 0, empty = 0;
+	int counter = 0, empty = 0;
 	Contact contactObj;
-	/* needs fixing */
-	if (index == ContactNb)
-		return;
-	cout << "\e[1;33m add a contact:\e[0;37m"
+
+	cout << "\e[1;33madd a contact:\e[0;37m"
 		 << "\n";
 	while (counter < fieldNb)
 	{
@@ -24,7 +30,7 @@ void PhoneBook::addContact()
 			empty++;
 		if (counter == 3 && notNumber(value))
 		{
-			cout << "\e[1;31m not a valid number\e[0;37m \n";
+			cout << "\e[1;31mNOT A VALID NUMBER\e[0;37m \n";
 			return;
 		}
 		contactObj.setField(counter, value);
@@ -32,12 +38,18 @@ void PhoneBook::addContact()
 	}
 	if (empty == 5)
 	{
-		cout << "\e[1;31m trying to add empty contact\e[0;37m \n";
+		cout << "\e[1;31mTRYING TO ADD EMPTY CONTACT!\e[0;37m \n";
 		return;
 	}
-	contacts[index] = contactObj;
+	if (index == ContactNb)
+	{
+		moreThan8Contacts(contactObj);
+		return;
+	}
+	else
+		contacts[index] = contactObj;
 	index++;
-	cout << "\e[1;32m contact successfully added \e[0;37m"
+	cout << "\e[1;32mContact successfully added \e[0;37m"
 		 << "\n";
 }
 
@@ -47,10 +59,10 @@ void PhoneBook::Search()
 	Contact contactObj;
 	int currentIndex = 0;
 
-	cout << "\e[1;33m searching...\e[0;37m"
+	cout << "\e[1;33mSearching...\e[0;37m"
 		 << "\n";
 	showFieldsColumns();
-	while (currentIndex < this->index)
+	while (currentIndex < index)
 	{
 		i = 0;
 		cout << endl;
@@ -74,16 +86,16 @@ void PhoneBook::searchByIndex(Contact contactObj)
 	string value;
 	int i;
 
-	cout << "\e[1;34m Enter a valid index : \e[0;37m";
+	cout << "\e[1;34mEnter a valid index : \e[0;37m";
 
 	std::getline(cin, value);
 	i = CheckIndex(value);
 	if (i == -1 || i >= index)
 	{
-		cout << "\e[1;31m Not a valid index\e[0;37m \n";
+		cout << "\e[1;31mNOT A VALID INDEX\e[0;37m \n";
 		return;
 	}
-	cout << "\e[1;33m searching for contact \e[0;37m" << i << "..." << endl;
+	cout << "\e[1;33mSearching for contact \e[0;37m" << i << "..." << endl;
 	contactObj = getContacts(i);
 	cout << "\e[1;34mindex\e[0;37m: " << ToString(i) << endl;
 	i = 0;
@@ -93,4 +105,15 @@ void PhoneBook::searchByIndex(Contact contactObj)
 		cout << contactObj.getField(i) << endl;
 		i++;
 	}
+}
+
+void PhoneBook::moreThan8Contacts(Contact contactObj)
+{
+	if (oldest == ContactNb)
+		oldest = 0;
+	index = oldest++;
+	contacts[index] = contactObj;
+	index = ContactNb;
+	cout << "\e[1;32mContact successfully added \e[0;37m"
+		 << "\n";
 }

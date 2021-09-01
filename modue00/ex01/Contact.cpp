@@ -1,6 +1,10 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
+Contact::Contact() {}
+
+Contact::~Contact() {}
+
 string Contact::fields[fieldNb] =
 	{
 		"\e[1;34mFirst name: \e[1;37m",

@@ -22,7 +22,7 @@ int CheckIndex(string value)
 {
 	int index = 0;
 
-	if (notNumber(value))
+	if (notNumber(value) || value.empty())
 			return (-1);
 	std::stringstream(value) >> index;
 	if (index >= 8 || index < 0)

@@ -16,7 +16,7 @@
 
 string ToString(int val);
 
-int	notNumber(string str);
+int notNumber(string str);
 
 void showColumn(string field);
 
@@ -32,13 +32,15 @@ private:
 	Contact contacts[ContactNb];
 
 public:
-	PhoneBook() { index = 0; oldest = 0;};
-	~PhoneBook(){};
+	/**/
+	PhoneBook();
+	~PhoneBook();
+	/**/
 	void addContact();
 	void Search();
 	Contact getContacts(int i);
 	void searchByIndex(Contact contactObj);
-
+	void moreThan8Contacts(Contact contactObj);
 };
 
 #endif

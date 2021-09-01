@@ -24,8 +24,8 @@ private:
 
 public:
 	/**/
-	Contact(){};
-	~Contact(){};
+	Contact();
+	~Contact();
 	/**/
 	void setField(int i, string value);
 	void printRequiredField(int i);

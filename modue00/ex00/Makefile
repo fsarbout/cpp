@@ -6,13 +6,13 @@
 #    By: fsarbout <fsarbout@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 20:14:43 by fsarbout          #+#    #+#              #
-#    Updated: 2021/07/14 21:18:40 by fsarbout         ###   ########.fr        #
+#    Updated: 2021/09/04 10:04:20 by fsarbout         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Metaphone
+NAME = megaphone
 
-CC = clang++
+CC = clang++ -std=c++98
 
 CFLAGS = -Wall -Wextra -Werror
 

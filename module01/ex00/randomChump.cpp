@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-void randomChump(string name )
+void randomChump( string name )
 {
-	Zombie newzombie = Zombie(name);
+	Zombie randomChump = Zombie(name);
 }

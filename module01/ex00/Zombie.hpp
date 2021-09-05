@@ -1,14 +1,11 @@
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
-#include <string>
 #include <iostream>
 
 #define endl std::endl
 #define cout std::cout
 #define string std::string
-
-
 
 class Zombie
 {

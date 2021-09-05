@@ -2,6 +2,9 @@
 
 int main()
 {
-	randomChump("fatima zarha Zombie");
-
+	randomChump(" Zombie_1 ");
+	
+	Zombie *zombieHeap;
+	zombieHeap = newZombie(" Zombie_2 ");
+	delete zombieHeap;
 }

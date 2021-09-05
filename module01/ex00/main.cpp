@@ -2,6 +2,6 @@
 
 int main()
 {
-	
+	randomChump("fatima zarha Zombie");
 
 }

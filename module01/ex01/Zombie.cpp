@@ -1,22 +1,20 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(string name)
+Zombie::Zombie()
 {
-	this->name = name;
-	announce();
 }
 
 Zombie::~Zombie()
 {
-	cout << name << " dies" << endl;
+	cout << "<" << _name << ">" << " dies" << endl;
 }
 
 void	Zombie::announce(void)
 {
-	cout << "<" << name  << ">" << " BraiiiiiiinnnzzzZ..." << endl;
+	cout << "<" << _name  << ">" << " born" << endl;
 }
 
 void	Zombie::setName(string name)
 {
-	this->name = name;
+	_name = name;
 }

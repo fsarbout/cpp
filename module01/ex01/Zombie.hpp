@@ -10,17 +10,15 @@
 class Zombie
 {
 private:
-	string name;
+	string _name;
 public:
-	Zombie(string name);
+	Zombie();
 	~Zombie();
 	void	announce(void);
 	void	setName(string name);
 
 };
 
-Zombie* newZombie( string name );
 Zombie* zombieHorde( int N, string name );
-
 
 #endif

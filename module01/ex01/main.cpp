@@ -2,11 +2,10 @@
 
 int main()
 {
-	// string names[5] = {"1","2","3","4","5"};
-
-	Zombie *zombiat;
-
-	zombiat = zombieHorde(2,"hello");
-	
-
+	int N = 5;
+	string name = "";
+	Zombie *zombies ;
+	zombies  = zombieHorde(N, name);
+	cout << "**************************************\n";
+	delete [] zombies;
 }

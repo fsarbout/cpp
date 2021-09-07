@@ -1,15 +1,22 @@
 #include "Zombie.hpp"
 
-Zombie *newZombie(string name)
-{
-	Zombie *newZombie = new Zombie(name);
-	return newZombie;
-}
-
 Zombie* zombieHorde( int N, string name )
 {
-	Zombie *zombieHorde;
+	Zombie *zombies = new Zombie[N];
+	// 
+	string zombieNames[5] = {
+		"Ada Lovelace",
+	 	"Fiodor Dostoïevski",
+	  	"Al-Khawarizmi",
+	  	"Robert Kiyosaki",
+	   	"Elon Musk"
+	};
+	// 
 	for (int i = 0; i < N; i++)
-		zombieHorde = newZombie(name);
-	return zombieHorde;
+	{	
+		name = zombieNames[i];
+		zombies[i].setName(name);
+		zombies[i].announce();
+	}
+	return (zombies);
 }

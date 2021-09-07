@@ -2,6 +2,7 @@
 
 Zombie::Zombie()
 {
+	
 }
 
 Zombie::~Zombie()

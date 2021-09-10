@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include "Contact.hpp"
-#include <string>
-#include <iomanip>
+#include <string> // substr
+#include <iomanip> // setw
 #include <sstream>
 
 #define GREEN "\e[1;32m"

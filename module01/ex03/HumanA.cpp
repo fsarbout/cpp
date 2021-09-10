@@ -1,14 +1,21 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(string name)
+HumanA::HumanA(string name, Weapon weapon_A)
 {
-	cout << name << "\n";
+	_weapon_A = weapon_A;
+	_name = name;
 }
 
-HumanA::~HumanA(){}
+HumanA::~HumanA()
+{
+}
 
 void HumanA::attack()
 {
-		cout << _name << " attacks with his weapon " << "idk" << endl;
+	cout << _name << " attacks with his weapon " << _weapon_A.getType() << endl;
 }
 
+void HumanA::setWeapon(Weapon wpn)
+{
+	_weapon_A = wpn;
+}

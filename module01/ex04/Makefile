@@ -1,4 +1,4 @@
-NAME = losers
+NAME = sed
 
 CC = clang++ -std=c++98
 

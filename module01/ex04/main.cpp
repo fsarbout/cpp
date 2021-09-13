@@ -7,7 +7,7 @@
 #define endl std::endl
 #define ofstream std::ofstream
 #define ifstream std::ifstream
-#define getline(cin, c) std::getline(cin , c)
+#define getline(a, s) std::getline(a , s)
 
 int main(int ac, char **av)
 {
@@ -20,15 +20,18 @@ int main(int ac, char **av)
 			cout << "fuck you\n";
 		else
 		{
-			myFile << "ma fucksh you\n";
+			myFile << "ma fucksh you\n" << "it's actually working \n" << endl << "" << endl << "hola amigos\n";
 			myFile.close();
 		}
-		/*test*/
+		string toRread;
+		ifstream readFile(av[3]);
+		if (readFile.is_open())
 		{
-			string hello ;
-			getline(cin, hello);
-			cout << "hello\n";
-			cout << hello << endl;
+			while (getline(readFile, toRread))
+			{
+				cout << toRread << endl;
+			}
+			readFile.close();
 		}
 	}
 }

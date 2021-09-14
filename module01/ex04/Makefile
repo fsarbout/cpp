@@ -1,4 +1,4 @@
-NAME = sed
+NAME = replace
 
 CC = clang++ -std=c++98
 
@@ -12,6 +12,7 @@ $(NAME): $(SRC)
 	@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 clean:
 	@rm -rf *.o
+	@rm -rf *.replace
 
 fclean: clean
 	@rm -rf $(NAME) 

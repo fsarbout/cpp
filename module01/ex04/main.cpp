@@ -17,36 +17,57 @@
 #define getline(a, s) std::getline(a , s)
 
 
+// int     errorHandling(string s1, string s2, )
+
 
 int main(int ac, char **av)
 {
-	if (ac == 4)
-	{
-		string s1 = av[2];
-		string s2 = av[3];
-		string oFileName = av[1];
-		string iFileName =  oFileName + ".replace";
-		ofstream oFile(oFileName);
-		ifstream iFile(iFileName);
 
-		cout << "iFileName : " << iFileName << endl; 
-		cout << "oFileName : " << oFileName << endl; 
+    if (ac == 4)
+    {
+        string iFileName = av[1];
+        string oFileName = iFileName + ".replace";
 
-		if (!oFile.is_open())
-			cout << "fuck you\n";
-		else
-			cout << "thank you\n";
+        /*ofstream == create and write information to file */
+        ofstream oFile(oFileName);
+        /*ifstream == read information from file */
+        ifstream iFile(iFileName);
 
-		string toRread;
-		if (oFileName.is_open())
-		{
-			while (getline(oFileName, toRread))
-			{
-				cout << toRread << endl;
-			}
-			oFileName.close();
-		}
-	}
-	else
-		cout << "\e[1;31m number of arguments less or more than 4 \e[0;37m" << endl ;
+        string s1 = av[2];
+        string s2 = av[3];
+
+        if (!iFile.is_open())
+        {
+            cout << "\e[1;31m CAN'T OPEN FILE \e[0;37m" << endl ;  
+            return 0;
+        } 
+        if (s1.compare("") == 0 || s2.compare("") == 0)
+        {
+            cout << "\e[1;31m EMPTY STRING \e[0;37m" << endl ;  
+            return 0;
+        }
+        else
+        {
+            int count = 0;
+            stringPos;
+            string line;
+            while (getline(iFile, line))
+            {
+                if (s1.find(line) != 0)
+                {
+                    cout << endl;
+                    cout << "I find the world \n";
+                    cout << line << endl;
+                    count++;
+                }
+                cout << count << "times\n";
+                
+            }
+
+            cout << "s1 : " << s1 << endl;
+            cout << "s2 : " << s2 << endl;
+        }
+    }
+    else 
+		cout << "\e[1;31m number of arguments less or more than 4 \e[0;37m" << endl ;       
 }

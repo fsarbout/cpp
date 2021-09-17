@@ -30,5 +30,6 @@ void Karen::error( void )
 
 void	Karen::complain(string level)
 {
+	(void)level;
 	cout << "hello";
 }

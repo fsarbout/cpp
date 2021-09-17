@@ -7,7 +7,7 @@
 #define cout std::cout
 #define endl std::endl
 #define string std::string
-#define SHUT_UP 50
+#define SHUT_UP 10
 // #define cout std::cout
 
 class Karen

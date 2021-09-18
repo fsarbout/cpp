@@ -45,14 +45,4 @@ void Karen::complain(string level)
 	for (int i = 0; i < 4; i++)
 		if (level == levels[i])
 			(this->*functionsptr[i])();
-	/*
-** member function pointer syntax
-*/
-	// 	void (Karen::*functionPtr)( void ) = &Karen::debug;
-	// 	for (int i = 0; i < 4; i++)
-	// 			(this->*functionPtr)();
-
-	// this-> here is like
-	//  : Karen Obj;
-	// (Obj.*funcionPtr)();
 }

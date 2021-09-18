@@ -1,4 +1,4 @@
-NAME = karen
+NAME = karenFilter
 
 CC = clang++ -std=c++98
 

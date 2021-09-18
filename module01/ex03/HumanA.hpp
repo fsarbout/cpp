@@ -8,13 +8,12 @@ class HumanA
 {
 private:
 	string _name;
-	Weapon _weapon_A;
+	Weapon *_weapon_A;
 
 public:
-	HumanA(string name, Weapon _weapon_A);
+	HumanA(string name, Weapon &_weapon_A);
 	~HumanA();
 	void attack();
-	void setWeapon(Weapon wpn);
 };
 
 #endif

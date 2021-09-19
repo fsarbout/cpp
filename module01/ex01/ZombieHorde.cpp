@@ -8,8 +8,8 @@ Zombie* zombieHorde( int N, string name )
 		"Ada Lovelace",
 	 	"Fiodor Dostoïevski",
 	  	"Al-Khawarizmi",
-	  	"Robert Kiyosaki",
-	   	"Elon Musk"
+	   	"Elon Musk",
+	  	"Robert Kiyosaki"
 	};
 	// 
 	for (int i = 0; i < N; i++)

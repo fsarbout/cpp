@@ -20,3 +20,6 @@ public:
 };
 
 #endif
+
+// references are inherently const >> we can't change what they refer to 
+// reference to const >> we can't change the value of object they refer to

@@ -52,9 +52,9 @@ int main(int ac, char **av)
             return (1);
         
         string line;
-        size_t pos = 0;
         while (getline(iFile, line))
         {
+            size_t pos = 0;
             while ((pos = line.find(s1, pos)) != string::npos)
             {
                 line.erase(pos, s1.length());

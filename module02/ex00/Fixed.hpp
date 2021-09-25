@@ -9,15 +9,15 @@
 class Fixed
 {
 private:
-	int		fixedPoints;
-	static 	const int fractionalBits;
+	int		_fixedPoints;
+	static 	const int _fractionalBits;
 public:
-	Fixed(/* args */);
 	Fixed();
+	Fixed(Fixed &copy);
 	~Fixed();
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
-	Fixed operator=()
+	Fixed & operator=(Fixed const &value);
 };
 
 

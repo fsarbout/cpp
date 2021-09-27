@@ -1,5 +1,27 @@
 #include "Fixed.hpp"
 
+/**/
+
+Fixed::Fixed(Fixed &copy)
+{
+	*this = copy;
+	cout << "Copy constructor called" << endl;
+}
+
+Fixed::Fixed(Fixed &copy)
+{
+	*this = copy;
+	cout << "Copy constructor called" << endl;
+}
+
+
+ostream  & operator<<(ostream &o, Fixed const &copy)
+{
+	o << copy.getRawBits();
+}
+
+
+/**/
 
 Fixed::Fixed(Fixed &copy)
 {

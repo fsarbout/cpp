@@ -2,20 +2,46 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 #define cout std::cout
 #define endl std::endl
+#define ostream std::ostream
 
 class Fixed
 {
 private:
-	/* data */
+	int		_fixedPoints;
+	static 	const int _fractionalBits;
 public:
-	Fixed(/* args */);
+	Fixed();
+	Fixed(Fixed const &copy);
 	~Fixed();
+	int getRawBits( void ) const;
+	void setRawBits( int const raw );
+	Fixed & operator=(Fixed const &value);
+	// ex01 added section
+	Fixed(int const  intToConvert);
+	Fixed(float const  floatToConvert);
+	float toFloat( void ) const;
+	int toInt( void ) const;
+	// ex02 added section
+	int & min(const int &fixed1, const int &fixed2);
+	int & max(const int &fixed1, const int &fixed2);
+	//min max 
+
+	// 
+
+	bool &operator<( Fixed const &value1, Fixed const &value2 );
+	bool &operator>( Fixed const &value1, Fixed const &value2 );
+	bool &operator>=( Fixed const &value1, Fixed const &value2 );
+	bool &operator<=( Fixed const &value1, Fixed const &value2 );
+	bool &operator==( Fixed const &value1, Fixed const &value2 );
+	bool &operator!=( Fixed const &value1, Fixed const &value2 );
+
+	// 
 };
 
-
-
+ostream  &operator<<(ostream &o, Fixed const &copy);
 
 #endif

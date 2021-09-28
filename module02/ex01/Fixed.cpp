@@ -1,32 +1,9 @@
 #include "Fixed.hpp"
 
-/**/
-
-Fixed::Fixed(Fixed &copy)
+Fixed::Fixed(Fixed const &copy)
 {
-	*this = copy;
 	cout << "Copy constructor called" << endl;
-}
-
-Fixed::Fixed(Fixed &copy)
-{
 	*this = copy;
-	cout << "Copy constructor called" << endl;
-}
-
-
-ostream  & operator<<(ostream &o, Fixed const &copy)
-{
-	o << copy.getRawBits();
-}
-
-
-/**/
-
-Fixed::Fixed(Fixed &copy)
-{
-	*this = copy;
-	cout << "Copy constructor called" << endl;
 }
 
 Fixed::Fixed()
@@ -51,12 +28,55 @@ void Fixed::setRawBits( int const raw)
 	_fixedPoints = raw;
 }
 
+
+
 Fixed &Fixed::operator=(Fixed const &value)
 {
     cout << "Assignation operator called\n";
 
-    _fixedPoints = value.getRawBits();
+	if (this != &value)
+    	_fixedPoints = value.getRawBits();
     return *this;
 }
 
-int _fractionalBits = 8;
+/* added section in ex01*/
+
+Fixed::Fixed( int const intToConvert)
+{
+	cout << "Int constructor called" << endl;
+	
+	// *this = copy;
+
+	 this->_fixedPoints = intToConvert * (1 << this->_fractionalBits);
+}
+
+Fixed::Fixed(float const  floatToConvert)
+{
+	cout << "Float constructor called" << endl;
+	// *this = copy;
+
+	this->_fixedPoints = roundf(floatToConvert * (1 << this->_fractionalBits));
+}
+
+int Fixed::toInt( void ) const
+{
+	cout << "to int called\n";
+	    return (roundf(this->_fixedPoints / (1 << this->_fractionalBits)));
+}
+
+float Fixed::toFloat( void ) const
+{
+	cout << "to float called\n";
+	    return ((float)this->_fixedPoints / (float)(1 << this->_fractionalBits));
+
+}
+
+ostream  &operator<<(ostream &ostr, Fixed const &copy)
+{
+	ostr << copy.toFloat();
+	return ostr;
+}
+
+/**/
+
+const int Fixed::_fractionalBits = 8;

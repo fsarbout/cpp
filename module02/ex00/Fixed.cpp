@@ -1,10 +1,9 @@
 #include "Fixed.hpp"
 
-
 Fixed::Fixed(Fixed &copy)
 {
-	*this = copy;
 	cout << "Copy constructor called" << endl;
+	*this = copy;
 }
 
 Fixed::Fixed()
@@ -26,14 +25,19 @@ int Fixed::getRawBits( void ) const
 
 void Fixed::setRawBits( int const raw)
 {
+	cout << "setRawBits member function called" << endl;
 	_fixedPoints = raw;
 }
 
 Fixed &Fixed::operator=(Fixed const &value)
 {
     cout << "Assignation operator called\n";
-
-    _fixedPoints = value.getRawBits();
+	/*
+	** Self assignment check in assignment operator
+	**  https://www.geeksforgeeks.org/g-fact-38/
+	*/
+	if (this != &value)
+    	_fixedPoints = value.getRawBits();
     return *this;
 }
 

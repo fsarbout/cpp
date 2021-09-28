@@ -4,6 +4,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 #define cout std::cout
 #define endl std::endl
@@ -15,24 +16,20 @@ private:
 	int		_fixedPoints;
 	static 	const int _fractionalBits;
 public:
-	// pour convert  
-	Fixed(const int intToConvert);
-	Fixed(const int floatToConvert);
-	// 
 	Fixed();
-	Fixed(Fixed &copy);
+	Fixed(Fixed const &copy);
 	~Fixed();
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
 	Fixed & operator=(Fixed const &value);
 	// 
-	float toFloat( void );
+	Fixed(int const  intToConvert);
+	Fixed(float const  floatToConvert);
+	float toFloat( void ) const;
 	int toInt( void ) const;
-	ostream  & operator<<(ostream &o, Fixed const &copy);
-
+	// 
 };
 
-
-
+ostream  &operator<<(ostream &o, Fixed const &copy);
 
 #endif

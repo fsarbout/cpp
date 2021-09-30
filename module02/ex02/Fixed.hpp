@@ -32,28 +32,28 @@ public:
 
 	// 
 
-	bool operator<( Fixed const &value1);
-	bool operator>( Fixed const &value1 );
-	bool operator>=( Fixed const &value1 );
-	bool operator<=( Fixed const &value1 );
-	bool operator==( Fixed const &value1 );
-	bool operator!=( Fixed const &value1 );
+	// bool operator < ( Fixed const &value1);
+	// bool operator > ( Fixed const &value1 );
+	// bool operator >= ( Fixed const &value1 );
+	// bool operator <= ( Fixed const &value1 );
+	// bool operator == ( Fixed const &value1 );
+	// bool operator != ( Fixed const &value1 );
 
 	// We can't return a reference from arithmetic operations, since they produce a new value. The only (sensible) way to return a new value is to return it by value.
 
 	// 
-	Fixed operator+(Fixed const &value);
-	Fixed operator-(Fixed const &value);
-	Fixed operator*(Fixed const &rhs);
-	Fixed operator/(Fixed const &value);
+	// Fixed operator+(Fixed const &value);
+	// Fixed operator-(Fixed const &value);
+	// Fixed operator*(Fixed const &rhs);
+	// Fixed operator/(Fixed const &value);
 	// 
 
 	// prefix
-	Fixed &operator++();
-	Fixed &operator--();
+	Fixed operator++();
+	// Fixed operator--();
 	// postfix 
 	Fixed operator++( int );
-	Fixed operator--( int );
+	// Fixed operator--( int );
 	// 	
 };
 

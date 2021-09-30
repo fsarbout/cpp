@@ -44,7 +44,7 @@ public:
 	// 
 	// Fixed operator+(Fixed const &value);
 	// Fixed operator-(Fixed const &value);
-	// Fixed operator*(Fixed const &rhs);
+	Fixed operator * (Fixed const &rhs);
 	// Fixed operator/(Fixed const &value);
 	// 
 

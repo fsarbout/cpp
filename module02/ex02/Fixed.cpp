@@ -112,11 +112,11 @@ const int Fixed::_fractionalBits = 8;
 	// {
 	// 	return (_fixedPoints - value.getRawBits());
 	// }
-	// Fixed Fixed::operator * ( Fixed const &rhs)
-	// {
-	// 	// return (_fixedPoints * rhs.getRawBits());
-	// 	return;
-	// }
+	Fixed Fixed::operator * (Fixed const &rhs)
+	{
+		return (_fixedPoints * rhs.getRawBits());
+		// return;
+	}
 	// Fixed Fixed::operator / ( Fixed const &value)
 	// {
 	// 	// return (_fixedPoints / value.getRawBits());

@@ -2,23 +2,25 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 #define cout std::cout
 #define endl std::endl
 
+
 class Fixed
 {
 private:
-	int _fixedPoints;
-	static const int _fractionalBits;
-
+	int _fixedPoint;
+	static const int _fractionalBits = 8;
 public:
 	Fixed();
-	Fixed(Fixed &copy);
+	Fixed(const Fixed &fixed);
 	~Fixed();
+	Fixed & operator = (const Fixed &rhs);
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
-	Fixed &operator=(Fixed const &value);
 };
+
 
 #endif

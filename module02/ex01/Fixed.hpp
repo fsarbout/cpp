@@ -1,5 +1,3 @@
-
-
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
@@ -10,26 +8,27 @@
 #define endl std::endl
 #define ostream std::ostream
 
+
 class Fixed
 {
 private:
-	int		_fixedPoints;
-	static 	const int _fractionalBits;
+	int _fixedPoint;
+	static const int _fractionalBits = 8;
 public:
+	/* EX00*/
 	Fixed();
-	Fixed(Fixed const &copy);
+	Fixed(const Fixed &fixed);
 	~Fixed();
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
-	Fixed & operator=(Fixed const &value);
-	// 
-	Fixed(int const  intToConvert);
-	Fixed(float const  floatToConvert);
+	Fixed & operator = (const Fixed &rhs);
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+	/* EX01*/
+	Fixed(const int intToFix);
+	Fixed(const float floatToFix);
 	float toFloat( void ) const;
 	int toInt( void ) const;
-	// 
 };
 
-ostream  &operator<<(ostream &o, Fixed const &copy);
+ostream & operator << (ostream &o, Fixed const &value);
 
 #endif

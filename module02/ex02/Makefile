@@ -1,4 +1,4 @@
-NAME = talking
+NAME = fixed
 
 CC = clang++ -std=c++98
 

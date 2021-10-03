@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 
+
 int main(void)
 {
 	Fixed a;
@@ -17,3 +18,5 @@ int main(void)
 	cout << "d is " << d.toInt() << " as integer" << endl;
 	return 0;
 }
+
+// .f suffix to specify that it's float so that won't be treated as double

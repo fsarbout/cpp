@@ -8,55 +8,47 @@
 #define endl std::endl
 #define ostream std::ostream
 
+
 class Fixed
 {
 private:
-	int		_fixedPoints;
-	static 	const int _fractionalBits;
+	int _fixedPoint;
+	static const int _fractionalBits = 8;
 public:
+	/* EX00*/
 	Fixed();
-	Fixed(Fixed const &copy);
+	Fixed(const Fixed &fixed);
 	~Fixed();
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
-	Fixed & operator=(Fixed const &value);
-	// ex01 added section
-	Fixed(int const  intToConvert);
-	Fixed(float const  floatToConvert);
+	Fixed & operator = (const Fixed &rhs);
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+	/* EX01*/
+	Fixed(const int intToFix);
+	Fixed(const float floatToFix);
 	float toFloat( void ) const;
 	int toInt( void ) const;
-	// ex02 added section
-	int & min(const int &fixed1, const int &fixed2);
-	int & max(const int &fixed1, const int &fixed2);
-	//min max 
+	/* EX02*/
+	bool operator >  (Fixed const &rhs);
+	bool operator <  (Fixed const &rhs);
+	bool operator <= (Fixed const &rhs);
+	bool operator >= (Fixed const &rhs);
+	bool operator == (Fixed const &rhs);
+	bool operator != (Fixed const &rhs);
 
-	// 
-
-	// bool operator < ( Fixed const &value1);
-	// bool operator > ( Fixed const &value1 );
-	// bool operator >= ( Fixed const &value1 );
-	// bool operator <= ( Fixed const &value1 );
-	// bool operator == ( Fixed const &value1 );
-	// bool operator != ( Fixed const &value1 );
-
-	// We can't return a reference from arithmetic operations, since they produce a new value. The only (sensible) way to return a new value is to return it by value.
-
-	// 
-	// Fixed operator+(Fixed const &value);
-	// Fixed operator-(Fixed const &value);
+	Fixed operator + (Fixed const &rhs);
+	Fixed operator - (Fixed const &rhs);
 	Fixed operator * (Fixed const &rhs);
-	// Fixed operator/(Fixed const &value);
-	// 
+	Fixed operator / (Fixed const &rhs);
 
-	// prefix
-	Fixed operator++();
-	// Fixed operator--();
-	// postfix 
-	Fixed operator++( int );
-	// Fixed operator--( int );
-	// 	
+	Fixed  operator  ++ ( int ); 
+	Fixed  & operator  ++ ( void ); //pre-increment ++()
+	Fixed  operator  -- ( int ); 
+	Fixed  & operator  -- ( void ); 
+
+	static Fixed min (Fixed const &obj1, Fixed const &obj2);
+	static Fixed max (Fixed const &obj1, Fixed const &obj2);
 };
 
-ostream  &operator<<(ostream &o, Fixed const &copy);
+ostream & operator << (ostream &o, Fixed const &value);
 
 #endif

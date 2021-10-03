@@ -1,15 +1,11 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(Fixed const &copy)
-{
-	cout << "Copy constructor called" << endl;
-	*this = copy;
-}
+/* EX00*/
 
 Fixed::Fixed()
 {
 	cout << "Default constructor called" << endl;
-	_fixedPoints = 0;
+	_fixedPoint = 0;
 }
 
 Fixed::~Fixed()
@@ -17,66 +13,58 @@ Fixed::~Fixed()
 	cout << "Destructor called" << endl;
 }
 
-int Fixed::getRawBits( void ) const
+Fixed::Fixed(const Fixed &copy)
 {
-	cout << "getRawBits member function called" << endl;
-	return _fixedPoints;
+	cout << "Copy constructor called" << endl;
+	*this = copy;
 }
 
-void Fixed::setRawBits( int const raw)
+Fixed &Fixed::operator=(const Fixed &rhs)
 {
-	_fixedPoints = raw;
+	cout << "Assignation operator called" << endl;
+	if (this != &rhs)
+		this->_fixedPoint = rhs.getRawBits();
+	return *this;
 }
 
-
-
-Fixed &Fixed::operator=(Fixed const &value)
+int Fixed::getRawBits() const
 {
-    cout << "Assignation operator called\n";
-
-	if (this != &value)
-    	_fixedPoints = value.getRawBits();
-    return *this;
+	return this->_fixedPoint;
 }
 
-/* added section in ex01*/
+void Fixed::setRawBits(int const raw)
+{
+	this->_fixedPoint = raw;
+}
 
-Fixed::Fixed( int const intToConvert)
+int _fractionalBits = 8;
+
+/* EX01*/
+
+Fixed::Fixed(const int intToFix)
 {
 	cout << "Int constructor called" << endl;
-	
-	// *this = copy;
-
-	 this->_fixedPoints = intToConvert * (1 << this->_fractionalBits);
+	this->_fixedPoint = intToFix * (1 << this->_fractionalBits);
 }
 
-Fixed::Fixed(float const  floatToConvert)
+Fixed::Fixed(const float floatToFix)
 {
 	cout << "Float constructor called" << endl;
-	// *this = copy;
-
-	this->_fixedPoints = roundf(floatToConvert * (1 << this->_fractionalBits));
+	this->_fixedPoint = (roundf(floatToFix * (1 << this->_fractionalBits)));
 }
 
-int Fixed::toInt( void ) const
+float Fixed::toFloat(void) const
 {
-	cout << "to int called\n";
-	    return (roundf(this->_fixedPoints / (1 << this->_fractionalBits)));
+	return ((float)this->_fixedPoint / (float)(1 << this->_fractionalBits));
 }
 
-float Fixed::toFloat( void ) const
+int Fixed::toInt(void) const
 {
-	cout << "to float called\n";
-	    return ((float)this->_fixedPoints / (float)(1 << this->_fractionalBits));
-
+	return (roundf(this->_fixedPoint / (1 << this->_fractionalBits)));
 }
 
-ostream  &operator<<(ostream &ostr, Fixed const &copy)
+ostream & operator << (ostream &o,Fixed const &value)
 {
-	ostr << copy.toFloat();
-	return ostr;
+	o << value.toFloat();
+	return o;
 }
-
-/**/
-
-const int Fixed::_fractionalBits = 8;

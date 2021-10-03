@@ -1,15 +1,9 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(Fixed &copy)
-{
-	cout << "Copy constructor called" << endl;
-	*this = copy;
-}
-
 Fixed::Fixed()
 {
 	cout << "Default constructor called" << endl;
-	_fixedPoints = 0;
+	_fixedPoint = 0;
 }
 
 Fixed::~Fixed()
@@ -17,28 +11,29 @@ Fixed::~Fixed()
 	cout << "Destructor called" << endl;
 }
 
-int Fixed::getRawBits( void ) const
+Fixed::Fixed(const Fixed &copy)
+{
+	cout << "Copy constructor called" << endl;
+	*this = copy;
+}
+
+Fixed & Fixed::operator = (const Fixed &rhs)
+{
+	cout << "Assignation operator called" << endl;
+	if (this != &rhs)
+		this->_fixedPoint = rhs.getRawBits();
+	return *this;
+}
+
+int Fixed::getRawBits() const
 {
 	cout << "getRawBits member function called" << endl;
-	return _fixedPoints;
+	return this->_fixedPoint;
 }
 
-void Fixed::setRawBits( int const raw)
+void Fixed::setRawBits(int const raw)
 {
-	cout << "setRawBits member function called" << endl;
-	_fixedPoints = raw;
-}
-
-Fixed &Fixed::operator=(Fixed const &value)
-{
-    cout << "Assignation operator called\n";
-	/*
-	** Self assignment check in assignment operator
-	**  https://www.geeksforgeeks.org/g-fact-38/
-	*/
-	if (this != &value)
-    	_fixedPoints = value.getRawBits();
-    return *this;
+	this->_fixedPoint = raw;
 }
 
 int _fractionalBits = 8;

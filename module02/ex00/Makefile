@@ -1,4 +1,4 @@
-NAME = Orthodox
+NAME = fixedPoint
 
 CC = clang++ -std=c++98
 

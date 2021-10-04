@@ -28,8 +28,8 @@ public:
 	float toFloat( void ) const;
 	int toInt( void ) const;
 	/* EX02*/
-	bool operator >  (Fixed const &rhs);
 	bool operator <  (Fixed const &rhs);
+	bool operator >  (Fixed const &rhs);
 	bool operator <= (Fixed const &rhs);
 	bool operator >= (Fixed const &rhs);
 	bool operator == (Fixed const &rhs);

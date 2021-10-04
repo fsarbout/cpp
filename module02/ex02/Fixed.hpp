@@ -45,8 +45,8 @@ public:
 	Fixed  operator  -- ( int ); 
 	Fixed  & operator  -- ( void ); 
 
-	static Fixed min (Fixed const &obj1, Fixed const &obj2);
-	static Fixed max (Fixed const &obj1, Fixed const &obj2);
+	static const Fixed & min (Fixed const &obj1, Fixed const &obj2);
+	static const Fixed & max (Fixed const &obj1, Fixed const &obj2);
 };
 
 ostream & operator << (ostream &o, Fixed const &value);

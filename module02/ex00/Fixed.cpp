@@ -20,8 +20,7 @@ Fixed::Fixed(const Fixed &copy)
 Fixed & Fixed::operator = (const Fixed &rhs)
 {
 	cout << "Assignation operator called" << endl;
-	if (this != &rhs)
-		this->_fixedPoint = rhs.getRawBits();
+	this->_fixedPoint = rhs.getRawBits();
 	return *this;
 }
 

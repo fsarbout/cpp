@@ -120,3 +120,41 @@ Fixed Fixed::operator / (Fixed const &rhs)
 
 // 
 
+Fixed  Fixed::operator  ++ ( int ) 
+{
+	Fixed obj = *this;
+	++*this;
+	return obj;
+}
+
+Fixed  & Fixed::operator  ++ ( void ) 
+{
+	this->_fixedPoint++;
+	return *this;
+}
+
+Fixed  Fixed::operator  -- ( int ) 
+{
+	Fixed obj = *this;
+	++*this;
+	return obj;
+}
+
+Fixed  & Fixed::operator  -- ( void ) 
+{
+	this->_fixedPoint--;
+	return *this;
+}
+
+// pre-increement should return by reference
+// postfix should return copy (by value) of the original state of x / or void return type 
+
+const Fixed & Fixed::min (Fixed const &obj1, Fixed const &obj2)
+{
+	return ( obj1._fixedPoint < obj1._fixedPoint) ? obj1 : obj2;
+}
+
+const Fixed & Fixed::max (Fixed const &obj1, Fixed const &obj2)
+{
+	return ( obj1._fixedPoint > obj1._fixedPoint) ? obj1 : obj2;
+}	

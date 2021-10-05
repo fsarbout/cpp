@@ -3,17 +3,13 @@
 
 int main()
 {
-	ClapTrap a;
-	ClapTrap ada("ada");
-	ClapTrap you("you");
-	ClapTrap b("me");
-	ClapTrap c = b;
-	c.attak("everybody");
-	ada.beRepaired(30);
-	you.takeDamage(130);
-	//
-	cout << "*************************\n";
-	ScavTrap ok;
-	// ScavTrap noDefine("noDefine");
-	
+	ScavTrap obj1;
+	ScavTrap obj2("ada");
+	ScavTrap obj3("you");
+	ScavTrap obj4("me");
+	ScavTrap obj5 = obj4;
+	obj5.attak("everybody");
+	obj2.beRepaired(30);
+	obj3.takeDamage(130);
+	obj3.guardGate();
 }

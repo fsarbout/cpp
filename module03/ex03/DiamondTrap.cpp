@@ -1,11 +1,11 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap() 
 {
 	cout << "DiamondTrap Default ctor called " << endl;
-	// _hitpoints = 100;
-	// _energyPoints = 100;
-	// _attackDamage = 30;
+	this->_hitpoints = FragTrap::_hitpoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 }
 
 DiamondTrap::DiamondTrap(string name)
@@ -29,8 +29,19 @@ DiamondTrap & DiamondTrap::operator = (DiamondTrap const &obj)
 {
 	cout << "DiamondTrap assignment operator called" << endl ;
 	this->_name = obj._name; 
-	// this->_attackDamage = obj._attackDamage; 
-	// this->_energyPoints = obj._energyPoints; 
-	// this->_hitpoints = obj._hitpoints; 
+	this->_attackDamage = obj._attackDamage; 
+	this->_energyPoints = obj._energyPoints; 
+	this->_hitpoints = obj._hitpoints; 
 	return *this;
 } 
+
+void DiamondTrap::attak(string const &target)
+{
+	cout << "DiamondTrap " << "< " <<  _name << " > " << "attacks " << target << ", causing " << _attackDamage << " points of damage!" << endl;
+}
+
+void DiamondTrap::whoAmI()
+{
+	cout << "DiamondTrap name is" << " < " << _name << " > " << endl;
+	// cout << "ClapTrap name is" << " < " << _name << " > " << endl;
+}

@@ -6,8 +6,9 @@ int main()
 	DiamondTrap obj2("ada");
 	DiamondTrap obj4("me");
 	DiamondTrap obj5 = obj4;
-	// obj5.attak("everybody");
-	// obj2.beRepaired(30);
-	// obj3.takeDamage(130);
-	// obj3.highFivesGuys();
+	obj5.attak("everybody");
+	obj2.beRepaired(30);
+	obj4.takeDamage(130);
+	obj4.highFivesGuys();
+	obj2.whoAmI();
 }

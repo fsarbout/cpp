@@ -4,9 +4,9 @@
 ClapTrap::ClapTrap()
 {
 	cout << "ClapTrap Default ctor called " << endl;
-	_hitpoints = 10;
-	_energyPoints = 10;
-	_attackDamage = 0;
+	this->_hitpoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(string name) : _name(name)

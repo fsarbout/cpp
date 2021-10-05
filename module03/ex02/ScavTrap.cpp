@@ -3,9 +3,9 @@
 ScavTrap::ScavTrap()
 {
 	cout << "ScavTrap Default ctor called " << endl;
-	_hitpoints = 100;
-	_energyPoints = 50;
-	_attackDamage = 20;
+	this->_hitpoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(string name)

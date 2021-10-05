@@ -5,7 +5,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap : public FragTrap , public ScavTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 private:
 	string _name;
@@ -16,6 +16,7 @@ public:
 	DiamondTrap & operator = (DiamondTrap const &obj);
 	~DiamondTrap();
 	void whoAmI();
+	void attak(string const &target);
 };
 
 

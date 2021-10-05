@@ -3,9 +3,9 @@
 FragTrap::FragTrap()
 {
 	cout << "FragTrap Default ctor called " << endl;
-	_hitpoints = 100;
-	_energyPoints = 100;
-	_attackDamage = 30;
+	this->_hitpoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::FragTrap(string name)

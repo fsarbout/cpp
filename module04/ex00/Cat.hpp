@@ -12,7 +12,7 @@ public:
 	Cat(Cat const &copy);
 	~Cat();
 	Cat & operator = (Cat const &obj);
-	virtual void makeSound( void ) const;
+	void makeSound( void ) const;
 };
 
 

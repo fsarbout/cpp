@@ -15,9 +15,9 @@ protected:
 public:
 	Animal();
 	Animal(Animal const &copy);
-	~Animal();
+	virtual ~Animal();
 	Animal & operator = (Animal const &obj);
-	void 	makeSound( void ) const;
+	virtual void 	makeSound( void ) const;
 	string	getType( void ) const;
 };
 

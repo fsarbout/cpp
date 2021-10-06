@@ -10,6 +10,7 @@ DiamondTrap::DiamondTrap()
 
 DiamondTrap::DiamondTrap(string name)
 {
+	ClapTrap::_name = name + "_clap_name";
 	_name = name;
 	cout << "DiamondTrap Parameterized ctor called " << endl;
 }
@@ -43,5 +44,5 @@ void DiamondTrap::attak(string const &target)
 void DiamondTrap::whoAmI()
 {
 	cout << "DiamondTrap name is" << " < " << _name << " > " << endl;
-	// cout << "ClapTrap name is" << " < " << _name << " > " << endl;
+	cout << "ClapTrap name is" << " < " << ClapTrap::_name << " > " << endl;
 }

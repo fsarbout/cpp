@@ -23,7 +23,7 @@ WrongAnimal & WrongAnimal::operator = (WrongAnimal const &obj)
 	return *this;
 }
 
-string WrongAnimal::getType( void )
+string WrongAnimal::getType( void ) const
 {
 	return _type;
 }

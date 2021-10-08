@@ -3,13 +3,11 @@
 
 int main()
 {
-	ScavTrap obj1;
-	ScavTrap obj2("ada");
-	ScavTrap obj3("you");
-	ScavTrap obj4("me");
-	ScavTrap obj5 = obj4;
-	obj5.attak("everybody");
-	obj2.beRepaired(30);
-	obj3.takeDamage(130);
-	obj3.guardGate();
+	ScavTrap scavTrap1;
+	scavTrap1 = ScavTrap("me");
+	ScavTrap scavTrap2 = ScavTrap("you");
+	scavTrap1.attack("everybody");
+	scavTrap2.takeDamage(130);
+	scavTrap2.beRepaired(7);
+	scavTrap2.guardGate();
 }

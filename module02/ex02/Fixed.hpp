@@ -41,12 +41,14 @@ public:
 	Fixed operator / (Fixed const &rhs);
 
 	Fixed  operator  ++ ( int ); 
-	Fixed  & operator  ++ ( void ); //pre-increment ++()
+	Fixed  & operator  ++ ( void );
 	Fixed  operator  -- ( int ); 
 	Fixed  & operator  -- ( void ); 
 
-	static const Fixed & min (Fixed const &obj1, Fixed const &obj2);
-	static const Fixed & max (Fixed const &obj1, Fixed const &obj2);
+	static Fixed min (Fixed const &obj1, Fixed const &obj2);
+	static Fixed min (Fixed  &obj1, Fixed  &obj2);
+	static Fixed max (Fixed const &obj1, Fixed const &obj2);
+	static Fixed max (Fixed  &obj1, Fixed  &obj2);
 };
 
 ostream & operator << (ostream &o, Fixed const &value);

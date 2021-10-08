@@ -12,6 +12,7 @@ public:
 	~FragTrap();
 	FragTrap & operator = (FragTrap const &obj);
 	void highFivesGuys(void);
+	void attack(string const &target);
 };
 
 

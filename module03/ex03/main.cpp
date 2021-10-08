@@ -2,13 +2,9 @@
 
 int main()
 {
-	DiamondTrap obj1;
-	DiamondTrap obj2("ada");
-	DiamondTrap obj4("me");
-	DiamondTrap obj5 = obj4;
-	obj5.attak("everybody");
-	obj2.beRepaired(30);
-	obj4.takeDamage(130);
-	obj4.highFivesGuys();
-	obj2.whoAmI();
+	DiamondTrap diamondTrap("me");
+	diamondTrap.attack("everybody");
+	diamondTrap.takeDamage(130);
+	diamondTrap.highFivesGuys();
+	diamondTrap.whoAmI();
 }

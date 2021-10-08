@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() 
+DiamondTrap::DiamondTrap()
 {
 	cout << "DiamondTrap Default ctor called " << endl;
 	this->_hitpoints = FragTrap::_hitpoints;
@@ -8,10 +8,13 @@ DiamondTrap::DiamondTrap()
 	this->_attackDamage = FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap(string name)
+DiamondTrap::DiamondTrap(string name): ClapTrap(name+"_clap_name"), FragTrap(name),  ScavTrap (name), _name(name)
 {
-	ClapTrap::_name = name + "_clap_name";
-	_name = name;
+	ClapTrap::_name += "_clap_name";
+	cout << ClapTrap::_name << endl;
+	this->_hitpoints = FragTrap::_hitpoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 	cout << "DiamondTrap Parameterized ctor called " << endl;
 }
 
@@ -26,23 +29,25 @@ DiamondTrap::~DiamondTrap()
 	cout << "DiamondTrap Destructor called " << endl;
 }
 
-DiamondTrap & DiamondTrap::operator = (DiamondTrap const &obj)
+DiamondTrap &DiamondTrap::operator=(DiamondTrap const &obj)
 {
-	cout << "DiamondTrap assignment operator called" << endl ;
-	this->_name = obj._name; 
-	this->_attackDamage = obj._attackDamage; 
-	this->_energyPoints = obj._energyPoints; 
-	this->_hitpoints = obj._hitpoints; 
+	cout << "DiamondTrap assignment operator called" << endl;
+	this->_name = obj._name;
+	this->_attackDamage = obj._attackDamage;
+	this->_energyPoints = obj._energyPoints;
+	this->_hitpoints = obj._hitpoints;
 	return *this;
-} 
+}
 
-void DiamondTrap::attak(string const &target)
+void DiamondTrap::attack(string const &target)
 {
-	cout << "DiamondTrap " << "< " <<  _name << " > " << "attacks " << target << ", causing " << _attackDamage << " points of damage!" << endl;
+	ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI()
 {
-	cout << "DiamondTrap name is" << " < " << _name << " > " << endl;
-	cout << "ClapTrap name is" << " < " << ClapTrap::_name << " > " << endl;
+	cout << "DiamondTrap name is"
+		 << " < " << _name << " > " << endl;
+	cout << "ClapTrap name is"
+		 << " < " << ClapTrap::_name << " > " << endl;
 }

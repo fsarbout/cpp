@@ -7,7 +7,7 @@ int main()
 	ClapTrap you("you");
 	ClapTrap b("me");
 	ClapTrap c = b;
-	c.attak("everybody");
+	c.attack("everybody");
 	ada.beRepaired(30);
 	you.takeDamage(130);
 }

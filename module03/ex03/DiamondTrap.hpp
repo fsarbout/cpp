@@ -9,16 +9,15 @@ class DiamondTrap : public FragTrap, public ScavTrap
 {
 private:
 	string _name;
+
 public:
 	DiamondTrap();
 	DiamondTrap(string name);
 	DiamondTrap(DiamondTrap const &copy);
-	DiamondTrap & operator = (DiamondTrap const &obj);
+	DiamondTrap &operator=(DiamondTrap const &obj);
 	~DiamondTrap();
 	void whoAmI();
-	void attak(string const &target);
+	void attack(string const &target);
 };
-
-
 
 #endif

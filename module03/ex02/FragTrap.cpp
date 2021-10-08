@@ -10,7 +10,10 @@ FragTrap::FragTrap()
 
 FragTrap::FragTrap(string name)
 {
-	_name = name;
+	this->_name = name;
+	this->_hitpoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 	cout << "FragTrap Parameterized ctor called " << endl;
 }
 
@@ -38,4 +41,10 @@ FragTrap & FragTrap::operator = (FragTrap const &obj)
 void 	FragTrap::highFivesGuys( void )
 {
 	cout << "High Fives Guys" << endl;
+}
+
+void FragTrap::attack(string const &target)
+{
+	cout << "FragTrap " << "< " <<  this->_name << " > " << "attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << endl;
+	cout << this->_energyPoints << endl;
 }

@@ -1,6 +1,5 @@
 #include "ClapTrap.hpp"
 
-
 ClapTrap::ClapTrap()
 {
 	cout << "ClapTrap Default ctor called " << endl;
@@ -25,7 +24,7 @@ ClapTrap::~ClapTrap()
 	cout << "ClapTrap Destructor called " << endl;
 }
 
-ClapTrap & ClapTrap::operator = (ClapTrap const &assign)
+ClapTrap &ClapTrap::operator=(ClapTrap const &assign)
 {
 	cout << "ClapTrap Assignment operator called\n";
 	this->_attackDamage = assign._attackDamage;
@@ -35,18 +34,23 @@ ClapTrap & ClapTrap::operator = (ClapTrap const &assign)
 	return (*this);
 }
 
-void ClapTrap::attak(string const &target)
+void ClapTrap::attack(string const &target)
 {
-	cout << "ClapTrap " << "< " <<  _name << " > " << "attacks " << target << ", causing " << _attackDamage << " points of damage!" << endl;
+	cout << "ClapTrap "
+		 << "< " << _name << " > "
+		 << "attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	cout << "ClapTrap " << "< " << _name << " > " << "taking damage and losing " << amount << " of hit points" << endl;
+	cout << "ClapTrap "
+		 << "< " << _name << " > "
+		 << "taking damage and losing " << amount << " of hit points" << endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	cout << "ClapTrap " << "< " << _name << " > " << "is Repairing " << amount << " of energy" << endl;
+	cout << "ClapTrap "
+		 << "< " << _name << " > "
+		 << "is Repairing " << amount << " of energy" << endl;
 }
-

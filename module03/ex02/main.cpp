@@ -3,13 +3,11 @@
 
 int main()
 {
-	FragTrap obj1;
-	FragTrap obj2("ada");
-	FragTrap obj3("you");
-	FragTrap obj4("me");
-	FragTrap obj5 = obj4;
-	obj5.attak("everybody");
-	obj2.beRepaired(30);
-	obj3.takeDamage(130);
-	obj3.highFivesGuys();
+	FragTrap fragTrap1;
+	fragTrap1 = FragTrap("me");
+	FragTrap fragTrap2 = FragTrap("you");
+	fragTrap1.attack("everybody");
+	fragTrap2.takeDamage(130);
+	fragTrap2.beRepaired(7);
+	fragTrap2.highFivesGuys();
 }

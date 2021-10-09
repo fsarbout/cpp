@@ -15,7 +15,7 @@ Cat::Cat(Cat const &copy)
 
 Cat::~Cat()
 {
-	cout << "Cat ~Ctor Ctor called" << endl;
+	cout << "Cat ~Ctor called" << endl;
 	delete catBrain;
 }
 

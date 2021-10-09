@@ -15,7 +15,7 @@ Dog::Dog(Dog const &copy)
 
 Dog::~Dog()
 {
-	cout << "Dog ~Ctor Ctor called" << endl;
+	cout << "Dog ~Ctor called" << endl;
 	delete dogBrain;
 }
 

@@ -13,7 +13,7 @@ WrongAnimal::WrongAnimal(WrongAnimal const &copy)
 
 WrongAnimal::~WrongAnimal()
 {
-	cout << "WrongAnimal ~Ctor Ctor called" << endl;
+	cout << "WrongAnimal ~Ctor called" << endl;
 }
 
 WrongAnimal & WrongAnimal::operator = (WrongAnimal const &obj)

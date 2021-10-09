@@ -50,7 +50,7 @@ DYNAMIC : create a base class pointer that points to the derived class
 <h1> mechanism of runtime polymorphism </h1>
 
  runtime resolution
- the comiler handles that by 
+ the compiler handles that by 
  1) vtable : table of function pointers maintained per each class
  2) vptr : pointer to vtable , mantained per object instance .
 

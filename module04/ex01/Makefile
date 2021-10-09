@@ -1,8 +1,8 @@
-NAME = Polymorphism
+NAME = Fire
 
 CC = clang++ -std=c++98
 
-CFLAGS = -Wall -Wextra -Werror -Wshadow
+CFLAGS = -Wall -Wextra -Werror -Wshadow -fsanitize=address
 
 SRC = *.cpp
 	

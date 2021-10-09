@@ -13,7 +13,7 @@ Animal::Animal(Animal const &copy)
 
 Animal::~Animal()
 {
-	cout << "Animal ~Ctor Ctor called" << endl;
+	cout << "Animal ~Ctor called" << endl;
 }
 
 Animal & Animal::operator = (Animal const &obj)

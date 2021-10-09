@@ -14,7 +14,7 @@ WrongCat::WrongCat(WrongCat const &copy)
 
 WrongCat::~WrongCat()
 {
-	cout << "WrongCat ~Ctor Ctor called" << endl;
+	cout << "WrongCat ~Ctor called" << endl;
 }
 
 WrongCat & WrongCat::operator = (WrongCat const &obj)

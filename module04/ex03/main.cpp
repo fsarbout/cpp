@@ -2,7 +2,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Icharacter.hpp"
-#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 
 int main()
 {
@@ -23,5 +23,3 @@ int main()
 	delete src;
 	return 0;
 }
-
-// Classes that can be used to instantiate objects are called concrete classes

@@ -13,11 +13,10 @@ class Cure
 private:
 	/* data */
 public:
-	Cure(/* args */);
+	Cure();
+	Cure(Cure const &copy);
+	Cure operator = (Cure const &copy);
 	~Cure();
 };
-
-
-
 
 #endif

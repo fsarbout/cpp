@@ -1,5 +1,5 @@
-#ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
 #include <iostream>
 #include <string>
@@ -9,16 +9,13 @@
 #define string std::string
 
 
-class MateriaSource
+class IMateriaSource
 {
 private:
 	/* data */
 public:
-	MateriaSource(/* args */);
-	~MateriaSource();
+	IMateriaSource(/* args */);
+	~IMateriaSource();
 };
-
-
-
 
 #endif

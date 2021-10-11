@@ -1,11 +1,11 @@
-#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 
-MateriaSource::MateriaSource()
+IMateriaSource::IMateriaSource()
 {
-	cout << "MateriaSource created" << endl;
+	cout << "IMateriaSource created" << endl;
 }
 
-MateriaSource::~MateriaSource()
+IMateriaSource::~IMateriaSource()
 {
-	cout << "MateriaSource destroyed" << endl;
+	cout << "IMateriaSource destroyed" << endl;
 }

@@ -22,7 +22,8 @@ Cat::~Cat()
 Cat & Cat::operator = (Cat const &obj)
 {
 	cout << "Cat assignment operator called" << endl;
-	this->_type = obj._type;
+	if (this != &obj)
+		this->_type = obj._type;
 	return *this;
 }
 

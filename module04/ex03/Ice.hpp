@@ -3,18 +3,20 @@
 
 #include <iostream>
 #include <string>
+#include "Amateria.hpp"
 
 #define cout std::cout
 #define endl std::endl
 #define string std::string
 
 
-class Ice
+class Ice : public AMateria
 {
 private:
-	/* data */
 public:
-	Ice(/* args */);
+	Ice();
+	Ice(Ice const &copy);
+	Ice operator = (Ice const &assign);
 	~Ice();
 };
 

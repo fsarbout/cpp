@@ -15,3 +15,8 @@ AMateria::~AMateria()
 {
 	cout << "AMateria Destroyed" << endl;
 }
+
+void AMateria::use(ICharacter& target)
+{
+	cout << "Ice: * shoots an ice bolt at : " << target << "NAME *" << endl;
+}

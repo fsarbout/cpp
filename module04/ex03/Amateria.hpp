@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "Icharacter.hpp"
+#include "ICharacter.hpp"
 
 #define cout std::cout
 #define endl std::endl
@@ -20,7 +20,6 @@ public:
 	string const & getType() const; //Returns the materia type
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
-
 };
 
 

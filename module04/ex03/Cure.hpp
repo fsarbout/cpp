@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "Amateria.hpp"
+#include "AMateria.hpp"
 
 #define cout std::cout
 #define endl std::endl
@@ -16,8 +16,10 @@ private:
 public:
 	Cure();
 	Cure(Cure const &copy);
-	Cure operator = (Cure const &copy);
+	Cure operator=(Cure const &copy);
 	~Cure();
+	void use(ICharacter &target);
+	AMateria *clone() const;
 };
 
 #endif

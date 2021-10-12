@@ -1,11 +1,9 @@
 #include "Cure.hpp"
 
-
 Cure::Cure()
 {
 	cout << "Cure constructor called" << endl;
 }
-
 
 Cure::Cure(Cure const &copy)
 {
@@ -17,7 +15,12 @@ Cure::~Cure()
 	cout << "Cure desstructor called" << endl;
 }
 
-Amateria* Cure::clone() const
+AMateria *Cure::clone() const
 {
+	// return 0;
 	return (new Cure(*this));
+}
+void Cure::use(ICharacter &target)
+{
+	cout << "* heals " << target.getName() << "'s wounds *" << endl;
 }

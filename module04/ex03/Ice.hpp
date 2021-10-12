@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Amateria.hpp"
 
 #define cout std::cout
 #define endl std::endl
@@ -14,8 +15,11 @@ class Ice
 private:
 	/* data */
 public:
-	Ice(/* args */);
+	Ice();
+	Ice(const Ice &copy);
+	Ice operator = (const Ice &assign);
 	~Ice();
+	AMateria *clone() const;
 };
 
 

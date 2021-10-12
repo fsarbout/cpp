@@ -16,7 +16,6 @@ protected:
 public:
 	AMateria();
 	AMateria(string const & type);
-		// [...]
 	~AMateria();
 	string const & getType() const; //Returns the materia type
 	virtual AMateria* clone() const = 0;

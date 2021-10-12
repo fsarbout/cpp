@@ -16,3 +16,8 @@ Cure::~Cure()
 {
 	cout << "Cure desstructor called" << endl;
 }
+
+Amateria* Cure::clone() const
+{
+	return (new Cure(*this));
+}

@@ -11,13 +11,8 @@
 class Character : public ICharacter
 {
 private:
-	string _name;
-	AMateria *_materias[4];
 public:
-	Character(string name);
-	Character(Character const &copy);
-	~Character();
-	Character operator = (Character const &copy);
+	
 };
 
 #endif

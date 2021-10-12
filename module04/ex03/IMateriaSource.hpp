@@ -8,12 +8,14 @@
 #define endl std::endl
 #define string std::string
 
+
 class IMateriaSource
 {
+private:
+	/* data */
 public:
-	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria *) = 0;
-	virtual AMateria *createMateria(std::string const &type) = 0;
+	IMateriaSource(/* args */);
+	~IMateriaSource();
 };
 
 #endif

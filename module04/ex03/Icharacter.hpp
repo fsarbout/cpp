@@ -1,9 +1,9 @@
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-#include <iostream>	
+#include <iostream>
 #include <string>
-#include "AMateria.hpp"
+#include ""
 
 #define cout std::cout
 #define endl std::endl

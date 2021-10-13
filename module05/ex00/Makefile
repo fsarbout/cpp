@@ -1,4 +1,4 @@
-NAME = abstract
+NAME = Bureaucrat
 
 CC = clang++ -std=c++98
 

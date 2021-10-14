@@ -3,7 +3,7 @@
 In general, creating a copy of an object means to create an exact replica of the object
 having the same literal value, data type, and resources. (made by Copy Constructor or assignment operator..)
 
-  <img src="./deep-shallow.copy.png" />
+<img src="./deep-shallow.copy.png" />
 
 <h2> Shallow Copy </h2>
 
@@ -13,7 +13,7 @@ having the same literal value, data type, and resources. (made by Copy Construct
 
     <img src="./shallow-copy.png" />
 
-  . shallow copy example;
+- shallow copy example;
 
 ```c++
 class ShallowCopy{
@@ -46,7 +46,7 @@ public:
 <img src="./deep-copy.png" />
 
 
-	. deep copy example;
+- deep copy example;
 
 ``` c++
 class DeepCopy{
@@ -71,4 +71,5 @@ public:
 - SOURCES
 
 [Deep and Shallow Copying](https://www.cs.utexas.edu/~scottm/cs307/handouts/deepCopying.htm)
+
 [Deep and Shallow Copying 2](https://owlcation.com/stem/Copy-Constructor-shallow-copy-vs-deep-copy)

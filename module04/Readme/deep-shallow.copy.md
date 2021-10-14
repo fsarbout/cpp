@@ -3,7 +3,7 @@
 In general, creating a copy of an object means to create an exact replica of the object
 having the same literal value, data type, and resources. (made by Copy Constructor or assignment operator..)
 
-<img src="./deep-shallow.copy.png" />
+<img src="./deep-shallow.png" />
 
 <h2> Shallow Copy </h2>
 

@@ -10,6 +10,7 @@
 #define cout std::cout
 #define string std::string
 #define endl std::endl
+#define exeption std::exeption
 
 class Bureaucrat
 {

@@ -63,7 +63,7 @@ public:
 	}
 	DeepCopy& operator=(const DeepCopy& obj)
 	{
-		this->a = new int(\*obj.a);
+		this->a = new int(*obj.a);
 	}
 };
 ```

@@ -75,7 +75,7 @@ Every object of the class stores this VPTR
 * subclass constructor is called after base class destructor
 * subclass destructor is called before base class destructor
 
-```
+```c++
 class Base {
 public:
  Base();
@@ -105,7 +105,7 @@ A memory leak occurs!
 
 
 * Now consider the amended code below. The virtual keyword has been added to the destructors:
-```
+```c++
 class Base {
 public:
  Base();

@@ -11,7 +11,7 @@ having the same literal value, data type, and resources. (made by Copy Construct
   This will create ambiguity and run-time errors dangling pointer. Since both objects will reference to the same memory location, then change made by one will reflect those change in another object as well. Since we wanted to create a replica of the object, this purpose will not be filled by Shallow copy.
   Note: C++ compiler implicitly creates a copy constructor and overloads assignment operator in order to perform shallow copy at compile time.
 
-    <img src="./shallow-copy.png" />
+    <img src="./shallow-copy.png" width="200" height="200" />
 
 - shallow copy example;
 

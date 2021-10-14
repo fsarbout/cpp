@@ -25,13 +25,16 @@ int main()
 	
 	const WrongAnimal *wrong = new WrongAnimal();
 	const WrongAnimal *wrongCat = new WrongCat();
+	const WrongCat wrongCat2 = WrongCat();
 	cout << "wrong type    :\t" << wrong->getType() << " " << endl;
 	cout << "wrongcat type :\t" << wrongCat->getType() << " " << endl;
-	wrongCat->makeSound(); //will output the cat sound!
+	cout << "wrongcat2 type :\t" << wrongCat2.getType() << " " << endl;
+	wrongCat->makeSound();
 	cout << "" << endl;
 	wrong->makeSound();
+	wrongCat2.makeSound();
 	delete wrongCat;
-	// delete wrong;
+	delete wrong;
 }
 
 

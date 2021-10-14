@@ -19,7 +19,4 @@ public:
 	Brain & operator = (Brain const &obj);
 };
 
-
-
-
 #endif

@@ -17,7 +17,7 @@ public:
 	WrongAnimal(WrongAnimal const &copy);
 	virtual ~WrongAnimal();
 	WrongAnimal & operator = (WrongAnimal const &obj);
-	virtual void	makeSound( void ) const;
+	void	makeSound( void ) const;
 	string	getType( void ) const;
 };
 

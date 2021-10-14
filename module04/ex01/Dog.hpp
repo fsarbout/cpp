@@ -11,7 +11,7 @@ private:
 public:
 	Dog();
 	Dog(Dog const &copy);
-	~Dog();
+	virtual ~Dog();
 	Dog & operator = (Dog const &obj);
 	void 	makeSound( void ) const;
 };

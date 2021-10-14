@@ -11,7 +11,7 @@ private:
 public:
 	Cat();
 	Cat(Cat const &copy);
-	~Cat();
+	virtual ~Cat();
 	Cat & operator = (Cat const &obj);
 	void makeSound( void ) const;
 };

@@ -23,7 +23,11 @@ Dog::~Dog()
 Dog & Dog::operator = (Dog const &obj)
 {
 	cout << "Dog assignment operator called" << endl;
-	this->_type = obj._type;
+	if (this != &obj)
+	{
+		this->_type = obj._type;
+		this->dogBrain = new Brain(*obj.dogBrain);
+	}
 	return *this;
 }
 

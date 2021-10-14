@@ -1,8 +1,6 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
@@ -16,5 +14,12 @@ int main()
 		animal[k] = new Dog();
 	for (int i = 0; i < 20; i++)
 		delete animal[i];
-
 }
+
+
+
+
+
+
+
+

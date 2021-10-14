@@ -64,7 +64,7 @@ Every object of the class stores this VPTR
 
     * when the base pointer is assigned a derived class object, the base pointer points to _vptr of the derived class.
 
-- virtual destructor
+<h1> virtual destructor </h1>
 
 * A virtual destructor ensures that when derived subclasses go out of scope or are deleted
   the order of destruction of each class in a hierarchy is carried out correctly.

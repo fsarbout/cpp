@@ -16,7 +16,6 @@ the function without virtual is getting set only once by the compiler which is i
 Note that if a function is declared virtual in the base class, then it will be virtual in all of the derived classes.
 
 
-
  RUN time polymorphism >> run time , the compiler adds code to perform the above tasks while working
 
 A virtual function is a member function which is declared within a base class and is re-defined(Overriden) by a derived class
@@ -50,7 +49,7 @@ DYNAMIC : create a base class pointer that points to the derived class
 <h1> mechanism of runtime polymorphism </h1>
 
  runtime resolution
- the compiler handles that by 
+ the comiler handles that by 
  1) vtable : table of function pointers maintained per each class
  2) vptr : pointer to vtable , mantained per object instance .
 

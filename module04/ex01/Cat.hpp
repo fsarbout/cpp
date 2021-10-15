@@ -7,16 +7,16 @@
 class Cat : public Animal
 {
 private:
-	Brain *catBrain;
+	Brain *brain;
+
 public:
 	Cat();
 	Cat(Cat const &copy);
 	virtual ~Cat();
-	Cat & operator = (Cat const &obj);
-	void makeSound( void ) const;
+	Cat &operator=(Cat const &obj);
+	void makeSound(void) const;
+	void addIdea(int i, string idea);
+	string getIdea(int i);
 };
-
-
-
 
 #endif

@@ -17,9 +17,8 @@ public:
 	Brain(Brain const &copy);
 	virtual ~Brain();
 	Brain & operator = (Brain const &obj);
+	void addIdea(int i, string idea);
+	string getIdea(int i);
 };
-
-
-
 
 #endif

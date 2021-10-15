@@ -3,7 +3,7 @@
 Cat::Cat()
 {
 	cout << "Cat default Ctor called" << endl;
-	this->catBrain = new Brain();
+	this->brain = new Brain();
 	this->_type = "Cat";
 }
 
@@ -16,21 +16,31 @@ Cat::Cat(Cat const &copy)
 Cat::~Cat()
 {
 	cout << "Cat ~Ctor called" << endl;
-	delete catBrain;
+	delete brain;
 }
 
-Cat & Cat::operator = (Cat const &obj)
+Cat &Cat::operator=(Cat const &obj)
 {
 	cout << "Cat assignment operator called" << endl;
 	if (this != &obj)
 	{
 		this->_type = obj._type;
-		this->catBrain = new Brain(*obj.catBrain);
+		this->brain = new Brain(*obj.brain);
 	}
 	return *this;
 }
 
-void Cat::makeSound( void ) const
+void Cat::makeSound(void) const
 {
 	cout << "Cat make sound" << endl;
+}
+
+void Cat::addIdea(int i, string idea)
+{
+	this->brain->addIdea(i, idea);
+}
+
+string Cat::getIdea(int i)
+{
+	return this->brain->getIdea(i);
 }

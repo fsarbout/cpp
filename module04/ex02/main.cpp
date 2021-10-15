@@ -4,16 +4,16 @@
 
 int main()
 {
-	const Animal* animal[100];
+	const Animal* animals[2];
 	// const Animal = Animal();
+	
+	animals[0] = new Dog();
+	animals[1] = new Cat();
 
-	for (int k = 0; k < 50; k++)
-		animal[k] = new Dog();
-	animal[0]->makeSound();
-	for (int k = 50; k < 100; k++)
-		animal[k] = new Cat();
-	for (int i = 0; i < 100; i++)
-		delete animal[i];
+	animals[0]->makeSound();
+	animals[1]->makeSound();
+	for (int i = 0; i < 2; i++)
+		delete animals[i];
 }
 
 

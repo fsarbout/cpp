@@ -19,7 +19,18 @@ Brain::~Brain()
 Brain & Brain::operator = (Brain const &obj)
 {
 	cout << "Brain assignment operator called" << endl;
-	// this->_type = obj._type;
-	(void)obj;
-	return *this;
+	 if (this != &obj)
+        for(int i = 0 ; i < 100 ; i++)
+            this->ideas[i] = obj.ideas[i];
+    return *this;
+}
+
+void Brain::addIdea(int i, string idea)
+{
+    this->ideas[i] = idea;
+}
+
+string Brain::getIdea(int i)
+{
+    return this->ideas[i];
 }

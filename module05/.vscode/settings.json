@@ -1,5 +1,12 @@
 {
-	"files.associations": {
-		"exception": "cpp"
-	}
+  "files.associations": {
+    "exception": "cpp",
+    "stdexcept": "cpp",
+    "__debug": "cpp",
+    "functional": "cpp",
+    "memory": "cpp",
+    "new": "cpp",
+    "optional": "cpp",
+    "typeinfo": "cpp"
+  }
 }

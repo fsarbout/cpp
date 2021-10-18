@@ -4,11 +4,14 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include <stdexcept>
 
 #define cout std::cout
 #define string std::string
 #define endl std::endl
 #define stdException std::exception
+#define ostream std::ostream
+
 
 class Bureaucrat
 {
@@ -19,20 +22,24 @@ private:
 public:
 	Bureaucrat(string name, int grade);
 	~Bureaucrat();
-	string getName(void);
-	int getGrade(void);
+	string getName() const;
+	Bureaucrat(Bureaucrat const &copy);
+	Bureaucrat & operator = (Bureaucrat const &obj);
+	int getGrade(void) const;
 	void incrementGrade();
 	void decrementGrade();
 	class GradeTooHighException : public stdException
 	{
 	public:
-		const char* what() throw();
+		const char* what() const throw();
 	};
 	class GradeTooLowException : public stdException
 	{
 	public:
-		const char* what() throw();
+		const char* what() const throw();
 	};
 };
+
+ostream& operator << (ostream& o, Bureaucrat &obj);
 
 #endif

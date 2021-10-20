@@ -19,6 +19,7 @@ private:
 	const int _exeGrade;
 
 public:
+	Form();
 	Form(const string name, int signIt, int executeIt );
 	~Form();
 	Form(const Form &copy);
@@ -38,6 +39,8 @@ public:
 	public:
 		const char* what() const throw();
 	};
+	// ex02
+	virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 ostream& operator << (ostream& o, Form &rhs);

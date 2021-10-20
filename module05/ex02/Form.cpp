@@ -1,15 +1,15 @@
 #include "Form.hpp"
 
-Form::Form(const string name, int signGrade, int exeGrade) : _name(name), _signGrade(signGrade), _exeGrade(exeGrade)
+Form::Form(const string name, int signGrade, int exeGrade) :_name(name),_sign(false), _signGrade(signGrade),  _exeGrade(exeGrade)
 {
-	if (_signGrade < 0 || _exeGrade < 0)
+	if (signGrade < 1 || exeGrade < 1)
 		throw Form::GradeTooHighException();
-	if (_signGrade > 150 || _exeGrade > 150)
+	if (signGrade > 150 || exeGrade > 150)
 		throw Form::GradeTooLowException();
 }
 
 
-Form::Form(const Form &copy) : _name(copy._name), _signGrade(copy._signGrade), _exeGrade(copy._exeGrade)
+Form::Form(const Form &copy) : _name(copy._name), _sign(false), _signGrade(copy._signGrade),  _exeGrade(copy._exeGrade)
 {
 	*this = copy;
 }
@@ -41,14 +41,14 @@ int Form::getSignGrade() const { return _signGrade; }
 
 void	 Form::beSigned(Bureaucrat &b)
 {
-	if (b.getGrade() > _signGrade)
+	if (b.getGrade() > this->_signGrade)
 		throw Form::GradeTooLowException();
-	_sign = true;
+	this->_sign = true;
 }
 
 bool	Form::isSigned()
 {
-	if (this->_sign)
+	if (this->_sign == true)
 		return true;
 	return false;
 }
@@ -56,11 +56,13 @@ bool	Form::isSigned()
 ostream& operator << (ostream& o, Form &rhs)
 {
     o << "form name: " << rhs.getName() << endl;
-    o << "form Sign grade: " << rhs.getSignGrade() << endl;
-    o << "form Execute grade: " << rhs.getExeGrade() << endl;
-    if (rhs.isSigned())
-        o << "Signed" << endl;
-    else
-        o << "not signed" << endl;
+    o << "form sign grade: " << rhs.getSignGrade() << endl;
+    o << "form execute grade: " << rhs.getExeGrade() << endl;
+	(rhs.isSigned()) ? (o << "Signed" << endl) : (o << "not signed" << endl);
     return o;
+}
+
+
+Form::Form() : _name(""), _sign(false), _signGrade(0),  _exeGrade(0)
+{
 }

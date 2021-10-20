@@ -1,4 +1,4 @@
-NAME = maggots
+NAME = 28B
 
 CC = clang++ -std=c++98
 

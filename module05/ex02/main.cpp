@@ -1,13 +1,19 @@
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-    try{
-        Form f("F1", 1, 150);
-        cout << f;
-        Form f2("F2", 1, 0);
-        cout << f2;
-    } catch (stdException &e){
+    // normal case 
+    try
+    {
+        Bureaucrat b("bob", 150);
+        Form *f = new ShrubberyCreationForm("home");
+        f->beSigned(b);
+        // (void)f;
+    }
+    catch (stdException &e)
+    {
         cout << e.what();
     }
+
 }

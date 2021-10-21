@@ -4,19 +4,20 @@
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include <fstream>
+
+#define ofstream std::ofstream
 
 class ShrubberyCreationForm : public Form
 {
 private:
-	int _signGrade;
-	int _exeGrade;
+	const string _target;
 public:
 	ShrubberyCreationForm(const string target);
+	ShrubberyCreationForm(const ShrubberyCreationForm& copy);
 	~ShrubberyCreationForm();
-	int getSignGrade(void);
-	int getExeGrade(void);
 	void execute(Bureaucrat const & executor) const;
-	void	createTree();
+	ShrubberyCreationForm &operator = (const ShrubberyCreationForm& rhs);
 };
 
 #endif

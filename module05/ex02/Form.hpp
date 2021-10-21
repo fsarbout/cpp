@@ -21,14 +21,14 @@ private:
 public:
 	Form();
 	Form(const string name, int signIt, int executeIt );
-	~Form();
+	virtual ~Form();
 	Form(const Form &copy);
 	Form &operator=(const Form &rhs);
 	int getSignGrade(void) const;
 	int getExeGrade(void) const;
 	string getName (void ) const;
 	void	beSigned(Bureaucrat &b);
-	bool	isSigned();
+	bool	isSigned();	
 	class GradeTooHighException : public stdException
 	{
 	public:

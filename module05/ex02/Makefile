@@ -12,6 +12,7 @@ $(NAME): $(SRC)
 	@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 clean:
 	@rm -rf *.o
+	@rm -rf *_shrubbery
 
 fclean: clean
 	@rm -rf $(NAME) 

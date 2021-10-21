@@ -3,17 +3,25 @@
 
 int main()
 {
-    // normal case 
+    // ShrubberyCreationForm
+
     try
     {
         Bureaucrat b("bob", 150);
-        Form *f = new ShrubberyCreationForm("home");
-        f->beSigned(b);
-        // (void)f;
+        ShrubberyCreationForm shForm("home");
+        shForm.beSigned(b);
+        shForm.execute(b);
+        cout << shForm;
     }
     catch (stdException &e)
     {
         cout << e.what();
     }
+
+    // RobotomyRequestForm
+
+
+
+    // PresidentialPardonForm
 
 }

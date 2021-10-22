@@ -43,6 +43,7 @@ public:
 	public:
 		const char* what() const throw();
 	};
+	void executeForm(Form const & form);
 };
 
 ostream& operator << (ostream& o, Bureaucrat &obj);

@@ -8,11 +8,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+void ShrubberyCreationForm::action(Bureaucrat const &executer) const
 {
-	if (executor.getGrade() > this->getExeGrade())
-            throw Form::GradeTooLowException();
-
+	this->execute(executer);
 	ofstream oFile((_target + "_shrubbery").c_str());
 
 	oFile << "                                   .         ; " << endl;
@@ -43,7 +41,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	oFile << "                   ;%@@@@%%:;;;." << endl;
 	oFile << "               ...;%@@@@@%%:;;;;,..    " << endl;
 	oFile.close();
-
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) : Form(copy)

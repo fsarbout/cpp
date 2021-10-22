@@ -39,8 +39,14 @@ public:
 	public:
 		const char* what() const throw();
 	};
+	class FormNotSigned : public stdException
+	{
+	public:
+		const char* what() const throw();
+	};
 	// ex02
-	virtual void execute(Bureaucrat const & executor) const = 0;
+	virtual void execute(Bureaucrat const & executor) const;
+	virtual void action(Bureaucrat const &executer) const = 0;
 };
 
 ostream& operator << (ostream& o, Form &rhs);

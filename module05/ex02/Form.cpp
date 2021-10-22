@@ -66,3 +66,17 @@ ostream& operator << (ostream& o, Form &rhs)
 Form::Form() : _name(""), _sign(false), _signGrade(0),  _exeGrade(0)
 {
 }
+
+void	Form::execute(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() > this->_exeGrade)
+		throw Form::GradeTooLowException();
+	if (!this->_sign)
+		throw Form::FormNotSigned();
+	
+}
+
+const char *Form::FormNotSigned::what() const throw()
+{
+	return ("Form not Signed\n");
+}

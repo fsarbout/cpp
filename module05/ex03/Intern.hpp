@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Intern
 {
@@ -11,7 +14,12 @@ public:
 	Intern(Intern const &copy);
 	Intern & operator = (Intern const &obj);
 	~Intern();
-	Form * makeform(string form, string target);
+	Form* makeForm( string form, string target);
+	class notValidForm : public stdException
+	{
+	public:
+		const char* what() const throw();
+	};
 };
 
 #endif

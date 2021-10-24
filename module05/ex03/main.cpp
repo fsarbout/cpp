@@ -1,12 +1,10 @@
-#include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-
-
+#include "Intern.hpp"
 
 int main()
 {
+	Intern intern;
+	Form *shForm;
 
-
+	shForm = intern.makeForm("shForm", "target");
+	delete shForm;
 }

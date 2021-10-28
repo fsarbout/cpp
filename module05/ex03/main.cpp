@@ -2,9 +2,16 @@
 
 int main()
 {
-	Intern intern;
-	Form *shForm;
+	Bureaucrat b1("b1", 1);
+	Bureaucrat b2("b2", 150);
 
-	shForm = intern.makeForm("shForm", "target");
+	Intern intern = Intern();
+
+	Form *shForm = intern.makeForm("shForm", "target");
+	Form *rrForm = intern.makeForm("rrForm", "target1");
+	Form *ppForm = intern.makeForm("ppForm", "target2");
+
 	delete shForm;
+	delete rrForm;
+	delete ppForm;
 }

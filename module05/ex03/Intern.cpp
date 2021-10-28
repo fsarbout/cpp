@@ -18,22 +18,22 @@ Intern & Intern::operator = (Intern const &obj)
 
 Form* Intern::makeForm(string form, string target)
 {
-	// form "shform";
-
-	Form *fform;
 	string forms[3] = {"shForm", "ppForm" , "rrForm"};
 	Form *functions[3] = {new ShrubberyCreationForm(target), new RobotomyRequestForm(target), new PresidentialPardonForm(target)};
-	for (int i = 0; i < 3; i++)
-	{		
-		if(form == forms[i])
-			fform = functions[i];
-		else 
-			delete functions[i];
-	}
-	return fform;
+   	int j = -1;
+    for (int i = 0; i < 3 ; i++)
+    {
+        if (form == forms[i])
+			j = i;
+        else 
+            delete functions[i];
+    }
+    if (j == -1)
+        throw Intern::notValidForm();
+    return functions[j];
 }
 
 const char *Intern::notValidForm::what() const throw()
 {
-	return ("not a valid form \n");
+	return ("not a valid form\n");
 }

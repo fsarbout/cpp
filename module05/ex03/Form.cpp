@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(const string name, int signGrade, int exeGrade) :_name(name),_sign(false), _signGrade(signGrade),  _exeGrade(exeGrade)
+Form::Form(const string name, int signGrade, int exeGrade) : _name(name), _sign(false), _signGrade(signGrade), _exeGrade(exeGrade)
 {
 	if (signGrade < 1 || exeGrade < 1)
 		throw Form::GradeTooHighException();
@@ -8,8 +8,7 @@ Form::Form(const string name, int signGrade, int exeGrade) :_name(name),_sign(fa
 		throw Form::GradeTooLowException();
 }
 
-
-Form::Form(const Form &copy) : _name(copy._name), _sign(false), _signGrade(copy._signGrade),  _exeGrade(copy._exeGrade)
+Form::Form(const Form &copy) : _name(copy._name), _sign(false), _signGrade(copy._signGrade), _exeGrade(copy._exeGrade)
 {
 	*this = copy;
 }
@@ -33,47 +32,45 @@ const char *Form::GradeTooLowException::what() const throw()
 	return ("Form toooo low \n");
 }
 
-string	Form::getName() const { return _name; }
+string Form::getName() const { return _name; }
 
 int Form::getExeGrade() const { return _exeGrade; }
 
 int Form::getSignGrade() const { return _signGrade; }
 
-void	 Form::beSigned(Bureaucrat &b)
+void Form::beSigned(Bureaucrat &b)
 {
 	if (b.getGrade() > this->_signGrade)
 		throw Form::GradeTooLowException();
 	this->_sign = true;
 }
 
-bool	Form::isSigned()
+bool Form::isSigned()
 {
 	if (this->_sign == true)
 		return true;
 	return false;
 }
 
-ostream& operator << (ostream& o, Form &rhs)
+ostream &operator<<(ostream &o, Form &rhs)
 {
-    o << "form name: " << rhs.getName() << endl;
-    o << "form sign grade: " << rhs.getSignGrade() << endl;
-    o << "form execute grade: " << rhs.getExeGrade() << endl;
+	o << "form name: " << rhs.getName() << endl;
+	o << "form sign grade: " << rhs.getSignGrade() << endl;
+	o << "form execute grade: " << rhs.getExeGrade() << endl;
 	(rhs.isSigned()) ? (o << "Signed" << endl) : (o << "not signed" << endl);
-    return o;
+	return o;
 }
 
-
-Form::Form() : _name(""), _sign(false), _signGrade(0),  _exeGrade(0)
+Form::Form() : _name(""), _sign(false), _signGrade(0), _exeGrade(0)
 {
 }
 
-void	Form::execute(Bureaucrat const & executor) const
+void Form::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() > this->_exeGrade)
 		throw Form::GradeTooLowException();
 	if (!this->_sign)
 		throw Form::FormNotSigned();
-	
 }
 
 const char *Form::FormNotSigned::what() const throw()

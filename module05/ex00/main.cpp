@@ -2,13 +2,11 @@
 
 int main()
 {
-	/*
-	** too high case 
-	*/
+	cout << "*--------------------------too low---------------------------*" << endl;
 
 	try
 	{
-		Bureaucrat obj("obj1", 0);
+		Bureaucrat obj("obj1", 154);
 		obj.incrementGrade();
 	}
 	catch (stdException &e)
@@ -16,50 +14,28 @@ int main()
 		cout << e.what();
 	}
 
-	/*
-	** too low case 
-	*/
+	cout << "*-------------------------too hight--------------------------*" << endl;
 
-	// try
-	// {
-	// 	Bureaucrat obj("obj2", 151);
-	// 	obj.decrementGrade();
-	// }
-	// catch (stdException &e)
-	// {
-	// 	cout << e.what();
-	// }
+	try
+	{
+		Bureaucrat obj("obj2", 0);
+		obj.decrementGrade();
+	}
+	catch (stdException &e)
+	{
+		cout << e.what();
+	}
 
-	/*
-	** too high case 
-	*/
+	cout << "*---------------------------Normal---------------------------*" << endl;
 
-	// try
-	// {
-	// 	Bureaucrat obj("obj3", 1);
-	// 	obj.incrementGrade();
-	// }
-	// catch (stdException &e)
-	// {
-	// 	cout << e.what();
-	// }
-
-	/*
-	** copy , = and << opearator
-	*/
-
-	// try
-	// {
-	// 	Bureaucrat obj("obj4", 149);
-	// 	Bureaucrat obj2("obj5", 32);
-	// 	cout << obj;
-	// 	cout << obj2;
-	// 	obj2 = obj;
-	// 	cout << obj2;
-	// 	obj.decrementGrade();
-	// }
-	// catch (stdException &e)
-	// {
-	// 	cout << e.what();
-	// }
+	try
+	{
+		Bureaucrat obj("obj3", 45);
+		obj.incrementGrade();
+		cout << obj;
+	}
+	catch (stdException &e)
+	{
+		cout << e.what();
+	}
 }

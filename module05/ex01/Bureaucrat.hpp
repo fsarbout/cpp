@@ -14,8 +14,6 @@
 #define stdException std::exception
 #define ostream std::ostream
 
-
-
 class Form;
 class Bureaucrat
 {

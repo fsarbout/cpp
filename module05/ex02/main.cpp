@@ -7,39 +7,39 @@
 
 int main()
 {
-    // ShrubberyCreationForm
+    cout << "*--------------------------ShrubberyCreationForm---------------------------*" << endl;
 
-    // try
-    // {
-    //     Bureaucrat b("bureaucrat", 150);
-    //     ShrubberyCreationForm shForm("home");
-    //     b.signForm(shForm);
-    //     b.executeForm(shForm);
-    // }
-    // catch (stdException &e)
-    // {
-    //     cout << e.what();
-    // }
+    try
+    {
+        Bureaucrat b("bureaucrat", 15);
+        ShrubberyCreationForm shForm("home");
+        b.signForm(shForm);
+        b.executeForm(shForm);
+    }
+    catch (stdException &e)
+    {
+        cout << e.what();
+    }
 
-    // PresidentialPardonForm
+    cout << "*-------------------------PresidentialPardonForm---------------------------*" << endl;
 
-    // try
-    // {
-    //     Bureaucrat b("bureaucrat", 3);
-    //     PresidentialPardonForm ppForm("target");
-    //     b.signForm(ppForm);
-    //     b.executeForm(ppForm);
-    // }
-    // catch (stdException &e)
-    // {
-    //     cout << e.what();
-    // }
+    try
+    {
+        Bureaucrat b("bureaucrat", 3);
+        PresidentialPardonForm ppForm("target");
+        b.signForm(ppForm);
+        b.executeForm(ppForm);
+    }
+    catch (stdException &e)
+    {
+        cout << e.what();
+    }
 
-    // RobotomyRequestForm
+    cout << "*---------------------------RobotomyRequestForm----------------------------*" << endl;
 
     try 
     {
-        Bureaucrat b("bureaucrat", 3);
+        Bureaucrat b("bureaucrat", 150);
         RobotomyRequestForm rrForm("target");
         b.signForm(rrForm);
         b.executeForm(rrForm);

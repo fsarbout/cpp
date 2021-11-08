@@ -2,52 +2,37 @@
 
 int main()
 {
-	Bureaucrat b1("b1", 120);
-	Bureaucrat b2("b2", 150);
+	Bureaucrat b1("b1", 4);
+	Bureaucrat b2("b2", 15);
 
 	Intern intern = Intern();
 
-	Form *shForm = intern.makeForm("shForm", "target");
-	Form *rrForm = intern.makeForm("rrForm", "target1");
-	Form *ppForm = intern.makeForm("ppForm", "target2");
-
-	cout << "*--------------------------shForm---------------------------*" << endl;
-
-	try
+	try 
 	{
+		Form *shForm = intern.makeForm("shForm", "target");
+		Form *rrForm = intern.makeForm("rrForm", "target1");
+		Form *ppForm = intern.makeForm("ppForm", "target2");
+
+		cout << "*--------------------------shForm---------------------------*" << endl;
 		b1.signForm(*shForm);
 		b1.executeForm(*shForm);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << endl;
-	}
-
-	cout << "*--------------------------rrForm---------------------------*" << endl;
-
-	try
-	{
+		
+		cout << "*--------------------------rrForm---------------------------*" << endl;
 		b1.signForm(*rrForm);
 		b1.executeForm(*rrForm);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << endl;
-	}
 
-	cout << "*--------------------------ppForm---------------------------*" << endl;
-
-	try
-	{
+		cout << "*--------------------------ppForm---------------------------*" << endl;
 		b1.signForm(*ppForm);
 		b1.executeForm(*ppForm);
+
+		delete shForm;
+		delete rrForm;
+		delete ppForm;
+
 	}
-	catch (const std::exception &e)
+	catch(const std::exception &e)
 	{
-		std::cerr << e.what() << endl;
+			std::cerr << e.what() << endl;
 	}
 
-	delete shForm;
-	delete rrForm;
-	delete ppForm;
 }

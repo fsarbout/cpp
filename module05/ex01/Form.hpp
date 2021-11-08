@@ -9,7 +9,7 @@
 #define stdException std::exception
 #define ostream std::ostream
 
-class Bureaucrat; // WTF
+class Bureaucrat;
 class Form
 {
 private:

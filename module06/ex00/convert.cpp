@@ -2,7 +2,6 @@
 
 Convert::Convert(string str) : _str(str)
 {
-	cout << str << endl << "hello" << endl;
 }
 
 Convert::~Convert()
@@ -22,12 +21,12 @@ Convert & Convert::operator=(Convert const &src)
 
 const char* Convert::NonPrintableException::what() const throw()
 {
-	return ("Non printable character");
+	return ("Non printable character\n");
 }	
 
 const char* Convert::ImpossibleException::what() const throw()
 {
-	return ("Impossible conversion");
+	return ("Impossible conversion\n");
 }	
 
 string Convert::getString()
@@ -45,13 +44,45 @@ Convert::operator int() const
 {
 	try
 	{
-		int i = std::stoi(this->_str);
+		int i = stoi(this->_str);
 		cout << "int: " << i << endl;
 		return i;
 	}
 	catch(const std::exception& e)
 	{
-		cout<< "int: impossible" << endl;
+		cout << e.what();
+	}
+	return 0;
+}
+
+// Convert::operator double() const
+// {
+// 	try
+// 	{
+// 		double d = stod(this->_str);
+// 		cout << "double: " << d << endl;
+// 		return d;
+// 	}
+// 	catch(const std::exception& e)
+// 	{
+// 		cout<< "double: impossible" << endl;
+// 	}
+// 	return 0;
+// }
+
+Convert::operator char() const
+{
+	try
+	{
+		char c = stoi(this->_str);
+		if (!isprint(c))
+			throw Convert::NonPrintableException();
+		cout << "char: " << c << endl;
+		return c;
+	}
+	catch (const std::exception& e)
+	{
+		cout << e.what();
 	}
 	return 0;
 }

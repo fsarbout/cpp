@@ -1,17 +1,21 @@
 #include "convert.hpp"
 
-
-
 int main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		cout << av[1] << endl;
 		Convert convert(av[1]);
-		int i = static_cast<int>(convert);
-		cout << "i in main  " << i << endl;
-		// isValidType();
-		// isDisplayable();
+		int i = (convert);
+		// float f = static_cast<float>(convert);
+		// float f1 = convert;
+		// double d = (convert);
+		char c = (convert);
+		
+		// (void)f;
+		// (void)f1;
+		(void)i;
+		// (void)d;
+		(void)c;
 		return (0);
 	}
 	cout << RED << "Error: " << WHITE 

@@ -7,6 +7,10 @@
 #define cout std::cout
 #define endl std::endl
 #define string std::string
+#define stoi std::stoi
+#define stof std::stof
+#define stod std::stod
+#define isprint(c) std::isprint(c)
 
 
 #define GREEN "\e[1;32m"
@@ -28,7 +32,10 @@ public:
 	Convert &operator=(Convert const &rhs);
 	string getString();
 	void setString(string str);
-	// operator int() const;
+	operator int() const;
+	// operator float() const;
+	// operator double() const;
+	operator char() const;
 	class ImpossibleException : public std::exception
 	{
 		const char *what() const throw();

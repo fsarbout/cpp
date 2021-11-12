@@ -1,17 +1,10 @@
 #include "convert.hpp"
 
-Convert::Convert(string str) : _str(str)
-{
-}
+Convert::Convert(string str) : _str(str) {}
 
-Convert::~Convert()
-{
-}
+Convert::~Convert(){}
 
-Convert::Convert(Convert const &src)
-{
-	*this = src;
-}
+Convert::Convert(Convert const &src) { *this = src; }
 
 Convert & Convert::operator=(Convert const &src)
 {
@@ -21,7 +14,7 @@ Convert & Convert::operator=(Convert const &src)
 
 const char* Convert::NonPrintableException::what() const throw()
 {
-	return ("Non printable character\n");
+	return ("char: Non printable character\n");
 }	
 
 const char* Convert::ImpossibleException::what() const throw()
@@ -29,29 +22,17 @@ const char* Convert::ImpossibleException::what() const throw()
 	return ("Impossible conversion\n");
 }	
 
-string Convert::getString()
-{
-	return this->_str;
-}
-
-void Convert::setString(string str)
-{
-	this->_str = str;
-}
-
-
 Convert::operator int() const
 {
 	try
 	{
 		int i = stoi(this->_str);
-
-		// cout << "int: " << i << endl;
+		cout << "int: " << i << endl;
 		return i;
 	}
 	catch(const std::exception& e)
 	{
-		cout << e.what();
+		cout << "int: Impossible" << endl; 
 	}
 	return 0;
 }
@@ -60,9 +41,11 @@ Convert::operator double() const
 {
 	try
 	{
-		if ()
 		double d = stod(this->_str);
-		cout << "double: " << d << endl;
+		if (d == (int)d)
+			cout << "double: " << d << ".0" << endl;
+		else
+			cout << "double: " << d << endl;
 		return d;
 	}
 	catch(const std::exception& e)
@@ -74,16 +57,38 @@ Convert::operator double() const
 
 Convert::operator char() const
 {
-	char c = stoi(this->_str);
-	if (!isprint(c))
-		throw Convert::NonPrintableException();
-	cout << "char: " << c << endl;
-	return static_cast<char>(c);
+	try{
+		char c = stoi(this->_str);
+		if (!isprint(c))
+			throw Convert::NonPrintableException();
+		cout << "char: " << c << endl;
+		return static_cast<char>(c);
+	}
+	catch (const Convert::NonPrintableException& e)
+	{
+		cout << e.what();
+	}
+	catch (const std::exception &e)
+	{
+		cout << "char: Impossible" << endl;
+	}
+	return 0;
 }
 
-string ToString(int val)
+Convert::operator float() const
 {
-	std::stringstream stream;
-	stream << val;
-	return stream.str();
+	try
+	{
+		float f = stof(this->_str);
+		if (f != (int)f)
+			cout << "float: " << f << "f" << endl;
+		else
+			cout << "float: " << f << ".0f" << endl;	
+		return f;
+	}
+	catch(const std::exception& e)
+	{
+		cout<< "float: Impossible" << endl;
+	}
+	return 0;
 }

@@ -34,11 +34,9 @@ public:
 	~Convert();
 	Convert(Convert const &copy);
 	Convert &operator=(Convert const &rhs);
-	string getString();
-	void setString(string str);
 	operator int() const;
-	// operator float() const;
-	// operator double() const;
+	operator float() const;
+	operator double() const;
 	operator char() const;
 	class ImpossibleException : public std::exception
 	{

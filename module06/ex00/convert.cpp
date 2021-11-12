@@ -45,7 +45,8 @@ Convert::operator int() const
 	try
 	{
 		int i = stoi(this->_str);
-		cout << "int: " << i << endl;
+
+		// cout << "int: " << i << endl;
 		return i;
 	}
 	catch(const std::exception& e)
@@ -55,34 +56,34 @@ Convert::operator int() const
 	return 0;
 }
 
-// Convert::operator double() const
-// {
-// 	try
-// 	{
-// 		double d = stod(this->_str);
-// 		cout << "double: " << d << endl;
-// 		return d;
-// 	}
-// 	catch(const std::exception& e)
-// 	{
-// 		cout<< "double: impossible" << endl;
-// 	}
-// 	return 0;
-// }
-
-Convert::operator char() const
+Convert::operator double() const
 {
 	try
 	{
-		char c = stoi(this->_str);
-		if (!isprint(c))
-			throw Convert::NonPrintableException();
-		cout << "char: " << c << endl;
-		return c;
+		if ()
+		double d = stod(this->_str);
+		cout << "double: " << d << endl;
+		return d;
 	}
-	catch (const std::exception& e)
+	catch(const std::exception& e)
 	{
-		cout << e.what();
+		cout<< "double: impossible" << endl;
 	}
 	return 0;
+}
+
+Convert::operator char() const
+{
+	char c = stoi(this->_str);
+	if (!isprint(c))
+		throw Convert::NonPrintableException();
+	cout << "char: " << c << endl;
+	return static_cast<char>(c);
+}
+
+string ToString(int val)
+{
+	std::stringstream stream;
+	stream << val;
+	return stream.str();
 }

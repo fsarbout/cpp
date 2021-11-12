@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 
+
 #define cout std::cout
 #define endl std::endl
 #define string std::string
@@ -20,6 +21,9 @@
 #define YELLOW "\e[1;33m"
 #define BLUE "\e[1;34m"
 #define PURPLE "\033[1;35"
+
+string ToString(int val);
+void 	checkValue();
 
 class Convert
 {
@@ -38,11 +42,13 @@ public:
 	operator char() const;
 	class ImpossibleException : public std::exception
 	{
-		const char *what() const throw();
+		public:
+			const char *what() const throw();
 	};
 	class NonPrintableException : public std::exception
 	{
-		const char *what() const throw();
+		public:
+			const char *what() const throw();
 	};
 
 };

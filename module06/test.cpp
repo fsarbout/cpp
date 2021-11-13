@@ -18,6 +18,7 @@
 
 /***** FAQ *****/
 
+
 // Q : why to use static_cast when implicit conversion is involved ?
 // A : cuz C style cast is not easy to find in code , is kinda just adding 
 //  		english to code to be more readable and understandable
@@ -44,3 +45,10 @@ int main(){
 	string str2 = static_cast<string>(obj);
 	obj = static_cast<Int>(30);
 }
+
+
+
+
+
+
+// serialization in c++ : convert an object into sequence of bytes so that it can be stored in a file or memory,

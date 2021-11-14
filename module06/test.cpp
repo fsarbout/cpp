@@ -28,26 +28,43 @@
 class Int
 {
 private:
-	int x;
+	int _x;
 public:
-	Int(int x = 0) : x(x) { cout << "conversion constructor" << endl; };
-	operator string () { cout << "conversion operator" << endl; 
-		return to_string(x); 
-	}
+	Int(int x = 0) : _x(x) { 
+		cout << "conversion constructor" << endl; 
+		};
+	// operator string () { cout << "conversion operator" << endl; 
+	// 	return to_string(x); 
+	// }
 };
 
 int main(){
 	Int obj(5);
 
-	string str1 = obj;
-	obj = 20;
+	// string str1 = obj;
+	// obj = 20;
 
-	string str2 = static_cast<string>(obj);
-	obj = static_cast<Int>(30);
+	// string str2 = static_cast<string>(obj);
+	// obj = static_cast<Int>(30);
 }
 
 
 
+// convertion operator overload 
+//***/// is not the same as the conversion constructor
+// A conversion constructor is a single-parameter constructor that 
+// is declared without the function specifier explicit . 
+// The compiler uses conversion constructors to convert objects from the type of 
+// the first parameter to the type of the conversion constructor's class.
+
+// c style cast is less restrict than c++ cast , static cast stops many operation at
+// compile time , while C in runtime : for example cast from char* to int *
+//  or cast from derived to base class pointer 
+
+// upcast >> convert derived to base
+// downcast >> convert base to derived
+
+// conversion constructor : constructors that convert types of its parameter into a type of the class.
 
 
 

@@ -1,6 +1,11 @@
 #include "convert.hpp"
 
-Convert::Convert(string str) : _str(str) {}
+Convert::Convert(string str)
+{
+	if (!std::isdigit(str[0]) && str.length() == 1)
+		str = std::to_string(str[0]);
+	this->_str = str;
+}
 
 Convert::~Convert(){}
 

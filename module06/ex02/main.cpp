@@ -10,7 +10,6 @@
 Base *generate(void)
 {
 	int n = rand() % 3;
-	cout << "the random number:   " << n << endl;
 	switch (n)
 	{
 		case 0:
@@ -59,9 +58,7 @@ int main()
 {
 	srand(time(NULL));
 	Base *pBase = generate();
-	cout << "type with pointer:   " ;
 	identify(pBase);
-	cout << "type with reference: ";
 	identify(*pBase);
 
 	delete pBase;

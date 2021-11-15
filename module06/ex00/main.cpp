@@ -8,7 +8,7 @@ int main(int ac, char **av)
 		int i = static_cast<int>(convert);
 		char c = static_cast<char>(convert);
 		float f = static_cast<float>(convert);
-		float d = static_cast<float>(convert);
+		double d = static_cast<double>(convert);
 		(void)i, (void)c, (void)f, (void)d;
 
 		return (0);

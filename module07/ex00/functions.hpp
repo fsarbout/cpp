@@ -6,19 +6,17 @@
 #define cout std::cout
 #define endl std::endl
 #define string std::string
-#define is_same_v(a, b) std::is_same<a, b>::value
 
+/*************** MIN *****************/	
 template <typename T>
+T min(T a, T b);
 
-class Functions
-{
-	public:
-		functions();
-		~functions();
-		T min(T a, T b);
-		T max(T a, T b);
-		void swap(T a, T b);
+/*************** MAX *****************/
+template <typename T>
+T max(T a, T b);
 
-};
+/*************** SWAP ****************/
+template <typename T>
+void swap(T a, T b);
 
 #endif

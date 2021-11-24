@@ -1,4 +1,4 @@
-NAME = functions
+NAME = Array
 
 CC = clang++
 

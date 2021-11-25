@@ -2,6 +2,7 @@
 #define ARRAY_HPP
 
 #include <iostream>
+#include <exception>
 
 template <class T>
 class Array
@@ -40,7 +41,6 @@ public:
 	//
 	unsigned int size() const
 	{
-		std::cout << this->_size << std::endl;
 		return this->_size;
 	}
 	//
@@ -50,10 +50,16 @@ public:
 	}
 	class OutOFLimitss : public std::exception
 	{
-		what () const throw ()
+		const char *what () const throw ()
 		{
 			return "Out of limits\n";
 		}
+	};
+	T &operator[](unsigned int i)
+	{
+		if (i >= _size)
+			throw OutOFLimitss();
+		return _array[i];
 	}
 };
 

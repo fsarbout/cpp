@@ -10,7 +10,6 @@ void printElemet(T const &elem)
 	std::cout << elem << std::endl;
 }
 
-
 template <typename T, typename T2>
 void 	iter(T tab[],T2 len, void (*f)(T const &))
 {
@@ -19,7 +18,4 @@ void 	iter(T tab[],T2 len, void (*f)(T const &))
 		f(tab[i]);
 }
 
-
-
 #endif
-

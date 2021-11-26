@@ -1,13 +1,23 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-class span
+#include <iostream>
+
+
+class Span
 {
 private:
-	/* data */
+	unsigned int _N;
 public:
-	span(/* args */);
-	~span();
+	Span();
+	Span(unsigned int N);
+	~Span();
+	void addNumber(unsigned int N);
+	unsigned int shortestSpan();
+	unsigned int longestSpan();
+	Span &operator=(const Span &obj);
+	Span(const Span &copy);
+
 };
 
 

@@ -30,20 +30,18 @@ unsigned int Span::shortestSpan()
 	if (this->_V.size() <= 1)
 		throw Error();
 
-	unsigned int i = 0;
+	unsigned int i = 1;
 	unsigned int rtn;
 	unsigned int rtn2;
 	std::sort(this->_V.begin(), this->_V.end());
 
-	rtn = this->_V.at(i+1) - this->_V.at(i);
-	while (i < this->_V.size())
+	rtn = this->_V.at(1) - this->_V.at(0);
+	while (i  < this->_V.size())
 	{
-		i++;
-		std::cout << "i " << rtn << std::endl;
-		rtn2 = this->_V.at(i+1) - this->_V.at(i);
+		rtn2 = this->_V.at(i) - this->_V.at(i - 1);
 		if (rtn2 < rtn)
 			rtn = rtn2;
-		std::cout << "mok " <<  rtn << std::endl;
+		i++;
 	}
 	return rtn;
 }

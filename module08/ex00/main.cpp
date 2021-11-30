@@ -19,4 +19,13 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << "----------------------------------------" << std::endl;
+	try
+	{
+		easyfind(v, 42);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

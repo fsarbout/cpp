@@ -20,7 +20,7 @@ Span::Span(const Span &copy) { *this = copy; }
 
 void Span::addNumber(int number)
 {
-	if (this->_V.size() > _N)
+	if (this->_V.size() == _N)
 		throw Error();
 	this->_V.push_back(number);
 }

@@ -34,9 +34,7 @@ int main()
 
 		srand(time(NULL));
 		for (int i = 0; i < 10000; i++)
-		{
 			sp.addNumber(rand() % 10000);
-		}
 		std::cout << "vector: { " << sp << "} " << std::endl; 
 		std::cout << "Long  Span: " << sp.longestSpan() << std::endl;	
 		std::cout << "Short Span: " << sp.shortestSpan() << std::endl;
